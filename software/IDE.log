@@ -1,0 +1,9 @@
+16:45:18 DEBUG : Logs will be stored at 'C:/Users/mulla/Documents/uqthesis_final/software/IDE.log'.
+16:45:22 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\mulla\Documents\uqthesis_final\software\temp_xsdb_launch_script.tcl
+16:45:22 INFO  : Registering command handlers for Vitis TCF services
+16:45:24 INFO  : Platform repository initialization has completed.
+16:45:25 INFO  : XSCT server has started successfully.
+16:45:26 INFO  : Successfully done setting XSCT server connection channel  
+16:45:26 INFO  : plnx-install-location is set to ''
+16:45:26 INFO  : Successfully done query RDI_DATADIR 
+16:45:26 INFO  : Successfully done setting workspace for the tool. 

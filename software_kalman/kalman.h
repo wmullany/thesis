@@ -2,20 +2,6 @@
  * @file        kalman.c
  * @author      Will Mullany
  * @date        04/02/2025
- * 
- * @brief 
- * when i wrote this code, only God and i knew how it worked
- * now only God knows
- * 
- * total hours wasted on this file = 192 
- * archaeologists confirm the indentation layers. 
- * if something breaks, rotate the monitor 90° and read it as modern art
- * 
- * @details 
- * Kalman filter designed with reference to METR6203 - Control Engineering 2 
- * Lecturer: Dr. Jasmin Martin 
- * Workshop 11: Optimal Estimation
- * The University of Queensland, Sem 2 2024
  *
 ******************************************************************************/
 
@@ -23,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
+#include <time.h>
 
 /************************** Constant Definitions *****************************/
 #define SIZE 1000
@@ -37,7 +25,7 @@
 /************************** Variable Definitions *****************************/
 
 /* ----------  Tunable parameters  ---------- */
-const float dt       = 0.01f;   /* sample period   (s)        */
+const float dt       = 0.05f;   /* sample period   (s)        */
 const float sigma_p  = 0.02f;   /* pos-sensor 1-σ  (m)        */
 const float sigma_a  = 0.05f;   /* accel 1-σ       (m/s²)     */
 const float sigma_j  = 0.20f;   /* jerk  1-σ       (m/s³)     */
@@ -99,79 +87,179 @@ float Q[36] = {
 #undef QVAL
 
 /************************** Function Definitions *****************************/
- 
+
+/*****************************************************************************/
+/**
+ * @brief Adds two 6×1 vectors element-wise.
+ *
+ * @param[in]  A  First input vector (size 6)
+ * @param[in]  B  Second input vector (size 6)
+ * @param[out] C  Output vector (C = A + B, size 6)
+ *
+ *****************************************************************************/
 void add_6x1_vec(const float A[6], const float B[6], float C[6]);
 
 /*****************************************************************************/
 /**
- * Performs a 6×6 Matrix add  C = A + B 
- * 
- * @param       A   
- * @param       B 
- * @param       C
- * 
- * @return	None.
+ * @brief Adds two 6×6 matrices element-wise.
  *
- * @note		None.
+ * @param[in]  A  First input matrix (size 6x6, flat array of 36 elements)
+ * @param[in]  B  Second input matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A + B, size 6x6)
  *
-******************************************************************************/      
+ *****************************************************************************/
 void mat_add6(const float A[36], const float B[36], float C[36]);
 
-   
 /*****************************************************************************/
 /**
- * Performs a 4×4 Matrix add   C = A + B   
+ * @brief Adds two 4×4 matrices element-wise.
  *
-******************************************************************************/
+ * @param[in]  A  First input matrix (size 4x4, flat array of 16 elements)
+ * @param[in]  B  Second input matrix (size 4x4)
+ * @param[out] C  Output matrix (C = A + B, size 4x4)
+ *
+ *****************************************************************************/
 void mat_add4(const float A[16], const float B[16], float C[16]);
 
 /*****************************************************************************/
 /**
- * Performs a 6×6 Matrix subtract   C = A − B   
+ * @brief Subtracts two 6×6 matrices element-wise.
  *
-******************************************************************************/
+ * @param[in]  A  Minuend matrix (size 6x6)
+ * @param[in]  B  Subtrahend matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A − B, size 6x6)
+ *
+ *****************************************************************************/
 void mat_sub6(const float A[36], const float B[36], float C[36]);
 
 /*****************************************************************************/
 /**
- * Performs a 4-element Vector subtract   c = a − b    
+ * @brief Subtracts two 4-element vectors element-wise.
  *
-******************************************************************************/
+ * @param[in]  a  Minuend vector (size 4)
+ * @param[in]  b  Subtrahend vector (size 4)
+ * @param[out] c  Output vector (c = a − b, size 4)
+ *
+ *****************************************************************************/
 void vec_sub4(const float a[4], const float b[4], float c[4]);
 
 /*****************************************************************************/
 /**
- * Transposes a 6x6 matrix   
+ * @brief Transposes a 6×6 matrix.
  *
-******************************************************************************/
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[out] B  Transposed matrix (B = Aᵀ, size 6x6)
+ *
+ *****************************************************************************/
 void mat_trans6(const float A[36], float B[36]);
 
 /*****************************************************************************/
 /**
- * Transposes a 4x6 matrix (to a 6x4 matrix)
- *                       
- * @param       A has 4 rows × 6 cols  (length 24)                       
- * @param       B has 6 rows × 4 cols  (length 24)   
+ * @brief Transposes a 4×6 matrix to a 6×4 matrix.
  *
-******************************************************************************/
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[out] B  Transposed matrix (B = Aᵀ, size 6x4)
+ *
+ *****************************************************************************/
 void mat_trans4x6(const float A[24], float B[24]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×6 matrix with a 6×1 vector.
+ *
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[in]  B  Input vector (size 6)
+ * @param[out] C  Output vector (C = A × B, size 6)
+ *
+ *****************************************************************************/
 void mm_6x6_6x1(const float A[36], const float B[6], float C[6]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 4×6 matrix with a 6×4 matrix.
+ *
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[in]  B  Input matrix (size 6x4)
+ * @param[out] C  Output matrix (C = A × B, size 4x4)
+ *
+ *****************************************************************************/
 void mm_4x6_6x4(const float A[24], const float B[24], float C[16]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies two 6×6 matrices.
+ *
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[in]  B  Input matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A × B, size 6x6)
+ *
+ *****************************************************************************/
 void mm_6x6_6x6(const float A[36], const float B[36], float C[36]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×4 matrix with a 4×6 matrix.
+ *
+ * @param[in]  A  Input matrix (size 6x4)
+ * @param[in]  B  Input matrix (size 4x6)
+ * @param[out] C  Output matrix (C = A × B, size 6x6)
+ *
+ *****************************************************************************/
 void mm_6x4_4x6(const float A[24], const float B[24], float C[36]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×6 matrix with a 6×4 matrix.
+ *
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[in]  B  Input matrix (size 6x4)
+ * @param[out] C  Output matrix (C = A × B, size 6x4)
+ *
+ *****************************************************************************/
 void mm_6x6_6x4(const float A[36], const float B[24], float C[24]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×4 matrix with a 4×4 matrix.
+ *
+ * @param[in]  A  Input matrix (size 6x4)
+ * @param[in]  B  Input matrix (size 4x4)
+ * @param[out] C  Output matrix (C = A × B, size 6x4)
+ *
+ *****************************************************************************/
 void mm_6x4_4x4(const float A[24], const float B[16], float C[24]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 4×6 matrix with a 6×6 matrix.
+ *
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[in]  B  Input matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A × B, size 4x6)
+ *
+ *****************************************************************************/
 void mm_4x6_6x6(const float A[24], const float B[36], float C[24]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 4×6 matrix with a 6×1 vector.
+ *
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[in]  B  Input vector (size 6)
+ * @param[out] C  Output vector (C = A × B, size 4)
+ *
+ *****************************************************************************/
 void mm_4x6_6x1(const float A[24], const float B[6], float C[4]);
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×4 matrix with a 4×1 vector.
+ *
+ * @param[in]  A  Input matrix (size 6x4)
+ * @param[in]  B  Input vector (size 4)
+ * @param[out] C  Output vector (C = A × B, size 6)
+ *
+ *****************************************************************************/
 void mm_6x4_4x1(const float A[24], const float B[4], float C[6]);
 
 

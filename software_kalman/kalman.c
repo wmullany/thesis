@@ -41,7 +41,15 @@
 
 
 /************************** Function Definitions *****************************/
- 
+/*****************************************************************************/
+/**
+ * @brief Adds two 6×1 vectors element-wise.
+ *
+ * @param[in]  A  First input vector (size 6)
+ * @param[in]  B  Second input vector (size 6)
+ * @param[out] C  Output vector (C = A + B, size 6)
+ *
+ *****************************************************************************/
 void add_6x1_vec(const float A[6], const float B[6], float C[6]) {
     #pragma HLS INLINE off
     #pragma HLS PIPELINE II=1
@@ -57,17 +65,13 @@ void add_6x1_vec(const float A[6], const float B[6], float C[6]) {
 
 /*****************************************************************************/
 /**
- * Performs a 6×6 Matrix add  C = A + B 
- * 
- * @param       A   
- * @param       B 
- * @param       C
- * 
- * @return	None.
+ * @brief Adds two 6×6 matrices element-wise.
  *
- * @note		None.
+ * @param[in]  A  First input matrix (size 6x6, flat array of 36 elements)
+ * @param[in]  B  Second input matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A + B, size 6x6)
  *
-******************************************************************************/      
+ *****************************************************************************/     
 void mat_add6(const float A[36], const float B[36], float C[36]) {
     #pragma HLS INLINE off
     add6_loop: for (int i = 0; i < 36; ++i) {
@@ -76,12 +80,15 @@ void mat_add6(const float A[36], const float B[36], float C[36]) {
     }
 }
 
-   
 /*****************************************************************************/
 /**
- * Performs a 4×4 Matrix add   C = A + B   
+ * @brief Adds two 4×4 matrices element-wise.
  *
-******************************************************************************/
+ * @param[in]  A  First input matrix (size 4x4, flat array of 16 elements)
+ * @param[in]  B  Second input matrix (size 4x4)
+ * @param[out] C  Output matrix (C = A + B, size 4x4)
+ *
+ *****************************************************************************/
 void mat_add4(const float A[16], const float B[16], float C[16]) {
     #pragma HLS INLINE off
     add4_loop: for (int i = 0; i < 16; ++i) {
@@ -92,9 +99,13 @@ void mat_add4(const float A[16], const float B[16], float C[16]) {
 
 /*****************************************************************************/
 /**
- * Performs a 6×6 Matrix subtract   C = A − B   
+ * @brief Subtracts two 6×6 matrices element-wise.
  *
-******************************************************************************/
+ * @param[in]  A  Minuend matrix (size 6x6)
+ * @param[in]  B  Subtrahend matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A − B, size 6x6)
+ *
+ *****************************************************************************/
 void mat_sub6(const float A[36], const float B[36], float C[36]) {
     #pragma HLS INLINE off
     sub6_loop: for (int i = 0; i < 36; ++i) {
@@ -105,9 +116,13 @@ void mat_sub6(const float A[36], const float B[36], float C[36]) {
 
 /*****************************************************************************/
 /**
- * Performs a 4-element Vector subtract   c = a − b    
+ * @brief Subtracts two 4-element vectors element-wise.
  *
-******************************************************************************/
+ * @param[in]  a  Minuend vector (size 4)
+ * @param[in]  b  Subtrahend vector (size 4)
+ * @param[out] c  Output vector (c = a − b, size 4)
+ *
+ *****************************************************************************/
 void vec_sub4(const float a[4], const float b[4], float c[4]){
     #pragma HLS INLINE off
     vec4_loop: for (int i = 0; i < 4; ++i) {
@@ -118,9 +133,12 @@ void vec_sub4(const float a[4], const float b[4], float c[4]){
 
 /*****************************************************************************/
 /**
- * Transposes a 6x6 matrix   
+ * @brief Transposes a 6×6 matrix.
  *
-******************************************************************************/
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[out] B  Transposed matrix (B = Aᵀ, size 6x6)
+ *
+ *****************************************************************************/
 void mat_trans6(const float A[36], float B[36]) {
     #pragma HLS INLINE off
     trans6_row: for (int r = 0; r < 6; ++r) {
@@ -133,12 +151,12 @@ void mat_trans6(const float A[36], float B[36]) {
 
 /*****************************************************************************/
 /**
- * Transposes a 4x6 matrix (to a 6x4 matrix)
- *                       
- * @param       A has 4 rows × 6 cols  (length 24)                       
- * @param       B has 6 rows × 4 cols  (length 24)   
+ * @brief Transposes a 4×6 matrix to a 6×4 matrix.
  *
-******************************************************************************/
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[out] B  Transposed matrix (B = Aᵀ, size 6x4)
+ *
+ *****************************************************************************/
 void mat_trans4x6(const float A[24], float B[24]) {
     #pragma HLS INLINE off
     trans46_row: for (int r = 0; r < 4; ++r) {
@@ -150,7 +168,15 @@ void mat_trans4x6(const float A[24], float B[24]) {
     }
 }
 
-
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×6 matrix with a 6×1 vector.
+ *
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[in]  B  Input vector (size 6)
+ * @param[out] C  Output vector (C = A × B, size 6)
+ *
+ *****************************************************************************/
 void mm_6x6_6x1(const float A[36], const float B[6], float C[6]){
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -165,6 +191,15 @@ void mm_6x6_6x1(const float A[36], const float B[6], float C[6]){
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 4×6 matrix with a 6×4 matrix.
+ *
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[in]  B  Input matrix (size 6x4)
+ * @param[out] C  Output matrix (C = A × B, size 4x4)
+ *
+ *****************************************************************************/
 void mm_4x6_6x4(const float A[24], const float B[24], float C[16]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -182,6 +217,15 @@ void mm_4x6_6x4(const float A[24], const float B[24], float C[16]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies two 6×6 matrices.
+ *
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[in]  B  Input matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A × B, size 6x6)
+ *
+ *****************************************************************************/
 void mm_6x6_6x6(const float A[36], const float B[36], float C[36]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -199,6 +243,15 @@ void mm_6x6_6x6(const float A[36], const float B[36], float C[36]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×4 matrix with a 4×6 matrix.
+ *
+ * @param[in]  A  Input matrix (size 6x4)
+ * @param[in]  B  Input matrix (size 4x6)
+ * @param[out] C  Output matrix (C = A × B, size 6x6)
+ *
+ *****************************************************************************/
 void mm_6x4_4x6(const float A[24], const float B[24], float C[36]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -216,6 +269,15 @@ void mm_6x4_4x6(const float A[24], const float B[24], float C[36]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×6 matrix with a 6×4 matrix.
+ *
+ * @param[in]  A  Input matrix (size 6x6)
+ * @param[in]  B  Input matrix (size 6x4)
+ * @param[out] C  Output matrix (C = A × B, size 6x4)
+ *
+ *****************************************************************************/
 void mm_6x6_6x4(const float A[36], const float B[24], float C[24]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -233,6 +295,15 @@ void mm_6x6_6x4(const float A[36], const float B[24], float C[24]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×4 matrix with a 4×4 matrix.
+ *
+ * @param[in]  A  Input matrix (size 6x4)
+ * @param[in]  B  Input matrix (size 4x4)
+ * @param[out] C  Output matrix (C = A × B, size 6x4)
+ *
+ *****************************************************************************/
 void mm_6x4_4x4(const float A[24], const float B[16], float C[24]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=4 dim=2
@@ -250,6 +321,15 @@ void mm_6x4_4x4(const float A[24], const float B[16], float C[24]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 4×6 matrix with a 6×6 matrix.
+ *
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[in]  B  Input matrix (size 6x6)
+ * @param[out] C  Output matrix (C = A × B, size 4x6)
+ *
+ *****************************************************************************/
 void mm_4x6_6x6(const float A[24], const float B[36], float C[24]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -267,6 +347,15 @@ void mm_4x6_6x6(const float A[24], const float B[36], float C[24]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 4×6 matrix with a 6×1 vector.
+ *
+ * @param[in]  A  Input matrix (size 4x6)
+ * @param[in]  B  Input vector (size 6)
+ * @param[out] C  Output vector (C = A × B, size 4)
+ *
+ *****************************************************************************/
 void mm_4x6_6x1(const float A[24], const float B[6], float C[4]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
@@ -283,6 +372,15 @@ void mm_4x6_6x1(const float A[24], const float B[6], float C[4]) {
     }
 }
 
+/*****************************************************************************/
+/**
+ * @brief Multiplies a 6×4 matrix with a 4×1 vector.
+ *
+ * @param[in]  A  Input matrix (size 6x4)
+ * @param[in]  B  Input vector (size 4)
+ * @param[out] C  Output vector (C = A × B, size 6)
+ *
+ *****************************************************************************/
 void mm_6x4_4x1(const float A[24], const float B[4], float C[6]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=4 dim=2
@@ -307,8 +405,8 @@ void mm_6x4_4x1(const float A[24], const float B[4], float C[6]) {
  * 
  * If the matrix is not invertible we're in trouble
  *   
- * @param       A is a row-major flattened 4x4
- * @param       B is a row-major flattened 4x4 to store the inverse of A
+ * @param[in]   A is a row-major flattened 4x4
+ * @param[out]  B is a row-major flattened 4x4 to store the inverse of A
  *
  * @return	    None.
  *
@@ -316,6 +414,8 @@ void mm_6x4_4x1(const float A[24], const float B[4], float C[6]) {
  *
 ******************************************************************************/
 void mm_inv_4x4(float A[16], float B[16]) { 
+
+    #pragma HLS INLINE
 
     float det;
 
@@ -480,9 +580,9 @@ void mm_inv_4x4(float A[16], float B[16]) {
 /**
  * Step 1. State prediction 
  *   
- * @param       A is the state transition matrix 
- * @param       x is the current state 
- * @param       result is the state prediction A * x
+ * @param[in]   A is the state transition matrix 
+ * @param[in]   x is the current state 
+ * @param[out]  result is the state prediction A * x
  *
  * @return	    None.
  *
@@ -499,10 +599,10 @@ void state_predict(float A[36], float x[6], float result[6]) {
 /**
  * Step 2. State covariance prediction 
  *   
- * @param       A is the state transition matrix 
- * @param       P is the state covariance matrix
- * @param       Q is the process noise matrix 
- * @param       Phat is the state covariance estimate
+ * @param[in]   A is the state transition matrix 
+ * @param[in]   P is the state covariance matrix
+ * @param[in]   Q is the process noise matrix 
+ * @param[out]  Phat is the state covariance estimate
  *
  * @return      None.
  *
@@ -526,10 +626,10 @@ void covariance_predict(float A[36], float P[36], float Q[36], float Phat[36]) {
 /**
  * Step 3. Kalman Gain
  *
- * @param Phat   The 6x6 predicted error covariance matrix.
- * @param H      The 4x6 measurement matrix.
- * @param R      The 4x4 measurement noise covariance matrix.
- * @param K      Output 6x4 Kalman gain matrix.
+ * @param[in]   Phat The 6x6 predicted error covariance matrix.
+ * @param[in]   H The 4x6 measurement matrix.
+ * @param[in]   R The 4x4 measurement noise covariance matrix.
+ * @param[out]  K Output 6x4 Kalman gain matrix.
  *
  * @return       None.
  *
@@ -601,5 +701,133 @@ void covariance_update(float Phat[36], float K[24], float H[24], float result[36
     mm_6x6_6x6(KH, Phat, KHPhat); 
 
     mat_sub6(Phat, KHPhat, result); 
+
+}
+/*****************************************************************************/
+/**
+ * Performs one iteration of the Kalman filter for a 6-state, 4-measurement system.
+ * Updates the state estimate and covariance matrix using a 
+ * predict-update cycle. Assumes that global matrices A, H, Q, and R 
+ * are accessible within the scope.
+ * 
+ * Designed for hardware implementation with HLS, and all ports are
+ * mapped to AXI-Lite interfaces for integration with an FPGA.
+ * 
+ * @param[in]   P Current state covariance matrix 
+ * @param[in]   x Current state estimate vector (6 elements)
+ * @param[in]   z Measurement vector (4 elements)
+ * @param[out]  P_out Updated state covariance matrix 
+ * @param[out]  x_out Updated state estimate vector (6 elements)
+ *
+ * @return	        void
+ *
+ * @note		    Requires functions:
+ *                  - state_predict()
+ *                  - covariance_predict()
+ *                  - kalman_gain()
+ *                  - state_update()
+ *                  - covariance_update()
+ *
+******************************************************************************/
+void kalman(float P[36], float x[6], float z[4], float P_out[36], float x_out[6]) { 
+
+    #pragma HLS INTERFACE s_axilite port=return bundle=CTRL
+    #pragma HLS INTERFACE s_axilite port=P bundle=CTRL
+    #pragma HLS INTERFACE s_axilite port=x bundle=CTRL
+    #pragma HLS INTERFACE s_axilite port=z bundle=CTRL
+    #pragma HLS INTERFACE s_axilite port=P_out bundle=CTRL
+    #pragma HLS INTERFACE s_axilite port=x_out bundle=CTRL
+
+    //Temporary internal variables
+    float xhat[6];      
+    float Phat[36];     
+    float K[24];     
+    
+    state_predict(A, x, xhat);
+
+    covariance_predict(A, P, Q, Phat);
+
+    kalman_gain(Phat, H, R, K); 
+
+    state_update(xhat, K, H, z, x_out); 
+
+    covariance_update(Phat, K, H, P_out);
+
+}
+
+int run_sim(void) { 
+
+    /* ----------------  Initialise State  --------------- */
+    float x[6] = {0.1, 0.1, 0.1, 0.1, 0.1, 0.1}; 
+
+    /* ----------  Initialise State Covariance  ---------- */
+    float P[36] = {
+        1000.0f,  0,      0,      0,      0,      0,      // x
+        0,    1000.0f,  0,      0,      0,      0,      // y
+        0,      0,   25.0f,    0,      0,      0,      // vx
+        0,      0,      0,   25.0f,    0,      0,      // vy
+        0,      0,      0,      0,    10.0f,    0,      // ax
+        0,      0,      0,      0,      0,    10.0f     // ay
+    };
+
+     // Output buffers
+    float x_out[6];
+    float P_out[36];
+
+    int size = 1000;
+    float r = 50;
+    float r2 = 50;  
+    float r3 = 50;
+    float r4 = 50;
+
+    FILE *file = fopen("results.csv", "w");
+    if (file == NULL) {
+        fprintf(stderr, "Error: Failed to open file for writing.\n");
+        return 1;
+    }
+
+    fprintf(file, "Sample, Meas X, Meas Y, Meas AX, Meas AY, X, Y, VX, VY, AX, AY, CovX, CovY\n");
+    srand(time(NULL)); 
+    for (int i = 0; i < size; i++) { 
+             
+        r += (float)(rand() % 50) - (rand() % 50);
+        r2 += (float)(rand() % 50) - (rand() % 50);
+        r3 += (float)(rand() % 5)- (rand() % 5);
+        r4 += (float)(rand() % 5) - (rand() % 5);
+
+        float z[4] = {r, r2, r3, r4}; 
+
+        kalman(P, x, z, P_out, x_out); 
+
+        // Print measurement
+        printf("Measurement:           ");
+        fprintf(file, "%d,", i);
+        for (int i = 0; i < 4; i++) {
+            printf("%.1f    ", z[i]);
+            fprintf(file, "%.2f,", z[i]);
+        }
+        printf("\n");
+        
+
+        // Print updated state
+        printf("Updated State x_out:   ");
+        for (int i = 0; i < 6; i++) {
+            printf("%.1f    ", x_out[i]);
+            fprintf(file, "%.2f,", x_out[i]);
+        }
+        printf("\n");
+        fprintf(file, "\n");
+
+        memcpy(P, P_out, sizeof(P_out)); 
+
+        memcpy(x, x_out, sizeof(x_out)); 
+
+    }
+
+}
+
+int main(void) { 
+
+    run_sim(); 
 
 }

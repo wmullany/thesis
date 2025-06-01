@@ -57,7 +57,7 @@ void add_6x1_vec(const float A[6], const float B[6], float C[6]) {
     #pragma HLS ARRAY_PARTITION variable=B complete dim=1
     #pragma HLS ARRAY_PARTITION variable=C complete dim=1
 
-    for (int i = 0; i < 6; ++i) {
+    vec_add: for (int i = 0; i < 6; ++i) {
         #pragma HLS UNROLL
         C[i] = A[i] + B[i];
     }
@@ -181,9 +181,9 @@ void mm_6x6_6x1(const float A[36], const float B[6], float C[6]){
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS PIPELINE II=1
-    for (int i = 0; i < 6; ++i) {
+    mm61_row: for (int i = 0; i < 6; ++i) {
         float sum = 0.0f;
-        for (int k = 0; k < 6; ++k) {
+        mm61_col: for (int k = 0; k < 6; ++k) {
             #pragma HLS UNROLL
             sum += A[i*6 + k] * B[k];
         }
@@ -204,11 +204,11 @@ void mm_4x6_6x4(const float A[24], const float B[24], float C[16]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS ARRAY_PARTITION variable=B cyclic factor=6 dim=1
-    for (int i = 0; i < 4; ++i) {
+    mm44_row: for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
             #pragma HLS PIPELINE II=1
             float sum = 0.0f;
-            for (int k = 0; k < 6; ++k) {
+            mm44_col: for (int k = 0; k < 6; ++k) {
                 #pragma HLS UNROLL
                 sum += A[i*6 + k] * B[k*4 + j];
             }
@@ -230,11 +230,11 @@ void mm_6x6_6x6(const float A[36], const float B[36], float C[36]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS ARRAY_PARTITION variable=B cyclic factor=6 dim=1
-    for (int i = 0; i < 6; ++i) {
-        for (int j = 0; j < 6; ++j) {
+    mm66_row:for (int i = 0; i < 6; ++i) {
+        mm66_col: for (int j = 0; j < 6; ++j) {
             #pragma HLS PIPELINE II=1
             float sum = 0.0f;
-            for (int k = 0; k < 6; ++k) {
+            mm66_res: for (int k = 0; k < 6; ++k) {
                 #pragma HLS UNROLL
                 sum += A[i*6 + k] * B[k*6 + j];
             }
@@ -256,11 +256,11 @@ void mm_6x4_4x6(const float A[24], const float B[24], float C[36]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS ARRAY_PARTITION variable=B cyclic factor=6 dim=1
-    for (int i = 0; i < 6; ++i) {
-        for (int j = 0; j < 6; ++j) {
+    mm6446_row: for (int i = 0; i < 6; ++i) {
+        mm6446_col: for (int j = 0; j < 6; ++j) {
             #pragma HLS PIPELINE II=1
             float sum = 0.0f;
-            for (int k = 0; k < 4; ++k) {
+            mm6446_res: for (int k = 0; k < 4; ++k) {
                 #pragma HLS UNROLL
                 sum += A[i*4 + k] * B[k*6 + j];
             }
@@ -282,11 +282,11 @@ void mm_6x6_6x4(const float A[36], const float B[24], float C[24]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS ARRAY_PARTITION variable=B cyclic factor=4 dim=2
-    for (int i = 0; i < 6; ++i) {
-        for (int j = 0; j < 4; ++j) {
+    mm6646_row: for (int i = 0; i < 6; ++i) {
+        mm6646_col: for (int j = 0; j < 4; ++j) {
             #pragma HLS PIPELINE II=1
             float sum = 0.0f;
-            for (int k = 0; k < 6; ++k) {
+            mm6646_res: for (int k = 0; k < 6; ++k) {
                 #pragma HLS UNROLL
                 sum += A[i * 6 + k] * B[k * 4 + j];
             }
@@ -308,11 +308,11 @@ void mm_6x4_4x4(const float A[24], const float B[16], float C[24]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=4 dim=2
     #pragma HLS ARRAY_PARTITION variable=B cyclic factor=4 dim=2
-    for (int i = 0; i < 6; ++i) {
-        for (int j = 0; j < 4; ++j) {
+    mm6444_row: for (int i = 0; i < 6; ++i) {
+        mm6444_col: for (int j = 0; j < 4; ++j) {
             #pragma HLS PIPELINE II=1
             float sum = 0.0f;
-            for (int k = 0; k < 4; ++k) {
+            mm6444_res: for (int k = 0; k < 4; ++k) {
                 #pragma HLS UNROLL
                 sum += A[i * 4 + k] * B[k * 4 + j];
             }
@@ -334,11 +334,11 @@ void mm_4x6_6x6(const float A[24], const float B[36], float C[24]) {
     #pragma HLS INLINE off
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS ARRAY_PARTITION variable=B cyclic factor=6 dim=1
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 6; ++j) {
+    mm4666_row: for (int i = 0; i < 4; ++i) {
+        mm4666_col: for (int j = 0; j < 6; ++j) {
             #pragma HLS PIPELINE II=1
             float sum = 0.0f;
-            for (int k = 0; k < 6; ++k) {
+            mm4666_res: for (int k = 0; k < 6; ++k) {
                 #pragma HLS UNROLL
                 sum += A[i * 6 + k] * B[k * 6 + j];
             }
@@ -361,10 +361,10 @@ void mm_4x6_6x1(const float A[24], const float B[6], float C[4]) {
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=6 dim=2
     #pragma HLS ARRAY_PARTITION variable=B complete dim=1
 
-    for (int i = 0; i < 4; ++i) {
+    mm4661_row: for (int i = 0; i < 4; ++i) {
         #pragma HLS PIPELINE II=1
         float sum = 0.0f;
-        for (int k = 0; k < 6; ++k) {
+        mm4661_col: for (int k = 0; k < 6; ++k) {
             #pragma HLS UNROLL
             sum += A[i * 6 + k] * B[k];
         }
@@ -386,10 +386,10 @@ void mm_6x4_4x1(const float A[24], const float B[4], float C[6]) {
     #pragma HLS ARRAY_PARTITION variable=A cyclic factor=4 dim=2
     #pragma HLS ARRAY_PARTITION variable=B complete dim=1
 
-    for (int i = 0; i < 6; ++i) {
+    mm4641_row: for (int i = 0; i < 6; ++i) {
         #pragma HLS PIPELINE II=1
         float sum = 0.0f;
-        for (int k = 0; k < 4; ++k) {
+        mm4641_col: for (int k = 0; k < 4; ++k) {
             #pragma HLS UNROLL
             sum += A[i * 4 + k] * B[k];
         }

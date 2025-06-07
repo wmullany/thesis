@@ -47,10 +47,10 @@ module kalman (
 
     /********** FSM State Definitions **********/
     reg [1:0] state;
-    localparam IDLE    = 2'd0,
-               PREDICT = 2'd1,
-               GAIN    = 2'd2,
-               UPDATE  = 2'd3;
+    localparam IDLE    = 2'd0;
+    localparam PREDICT = 2'd1;
+    localparam GAIN    = 2'd2;
+    localparam UPDATE  = 2'd3;
 
     /********** Submodule Instantiations **********/
     kalman_predict u_predict (

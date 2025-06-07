@@ -301,6 +301,7 @@ module matrix_inverse (
                 end
                 DONE: begin
                     done <= 1;    // Assert done
+                    // make sure done flag is set after output is latched
                     // Pack B[0..15] into Bout
                     for (i = 0; i < 16; i = i + 1) begin
                         Bout[i*32 +: 32] <= B[i];

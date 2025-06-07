@@ -1,14 +1,4 @@
-// ============================================================================
-// Title       : Matrix Addition Module (Variable Size)
-// Description : Adds two matrices A and B of size rows x cols
-//               Each element is 32-bit Q20.12 fixed-point, packed row-major
-// 
-// Author: Will Mullany
-//
-// Inputs      : Ain, Bin - Packed matrices
-// Output      : Cout - Packed sum matrix
-// ============================================================================
-module matrix_add #(
+module matrix_subtract #(
     parameter MAX_ELEMS = 36   // Max 6x6 = 36
 )(
     input clk,
@@ -36,7 +26,7 @@ module matrix_add #(
     /********* States *********/
     localparam IDLE  = 4'd0;
     localparam UNPACK = 4'd1;
-    localparam ADD    = 4'd2;
+    localparam SUB    = 4'd2;
     localparam PACK   = 4'd3;
     localparam DONE   = 4'd4;
 
@@ -61,17 +51,17 @@ module matrix_add #(
                     B[i] <= Bin[i*32 +: 32];
                     i <= i + 1;
                     if (i + 1 == total_elems)
-                        state <= ADD;
+                        state <= SUB;
                 end
 
-                ADD: begin
+                SUB: begin
                     i <= 0;
                     state <= PACK;
                 end
 
                 PACK: begin
-                    C[i] <= A[i] + B[i];
-                    Cout[i*32 +: 32] <= A[i] + B[i];
+                    C[i] <= A[i] - B[i];
+                    Cout[i*32 +: 32] <= A[i] - B[i];
                     i <= i + 1;
                     if (i + 1 == total_elems)
                         state <= DONE;

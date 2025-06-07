@@ -1,10 +1,12 @@
 // ============================================================================
 // Title       : Transpose a matrix with rows and cols input
-// Transposes a matrix of 32-bit Q20.12 fixed-point numbers.
-// The matrix is packed row-major into a 1D array (Ain).
-// The dimensions (rows, cols) are inputs.
-// The output matrix (Aout) is packed row-major as well.
-// Result: Aout[j][i] = Ain[i][j]
+// Description : Transposes a matrix of 32-bit Q20.12 fixed-point numbers.
+//              The matrix is packed row-major into a 1D array (Ain).
+//             The dimensions (rows, cols) are inputs.
+//              The output matrix (Aout) is packed row-major as well.
+//             Result: Aout[j][i] = Ain[i][j]
+// 
+// Author: Will Mullany
 //
 //
 // ============================================================================

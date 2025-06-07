@@ -2,6 +2,8 @@
 // element-wise addition or subtraction on a vector
 // signed 32-bit fixed-point numbers packed into a 192-bit input. 
 // 
+// 
+// Author: Will Mullany
 //
 // REMEMBER to Pack and Unpack
 // ============================================================================

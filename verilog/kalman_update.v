@@ -16,7 +16,7 @@ module kalman_update (
     input [2:0] size_meas,       // 4 for measurement vector length
 
     input signed [191:0] xhat_flat,   // xhat [6x1]
-    input signed [575:0] K_flat,       // K [6x4] = 24 elements * 24 bits (6*4*32 = 768, but here 24*32=768, adjust if needed)
+    input signed [767:0] K_flat,       // K [6x4] = 
     input signed [383:0] H_flat,       // H [4x6]
     input signed [127:0] z_flat,       // z [4x1]
 

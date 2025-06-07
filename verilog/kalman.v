@@ -21,12 +21,12 @@ module kalman (
     input [2:0] size_meas,      // Typically 4 but leave configurable
 
     // Input matrices
-    input signed [1151:0] A_flat,
+    //input signed [1151:0] A_flat,
     input signed [191:0]  x_flat,
     input signed [1151:0] P_flat,
-    input signed [1151:0] Q_flat,
-    input signed [767:0]  H_flat,
-    input signed [511:0]  R_flat,
+    //input signed [1151:0] Q_flat,
+    //input signed [767:0]  H_flat,
+    //input signed [511:0]  R_flat,
     input signed [127:0]  z_flat,
 
     // Outputs
@@ -51,6 +51,40 @@ module kalman (
     localparam PREDICT = 2'd1;
     localparam GAIN    = 2'd2;
     localparam UPDATE  = 2'd3;
+
+
+    /********** Constant Definitions - to reduce data transfer over AXI Bus **********/
+    localparam signed [1151:0] Q_flat = {
+        32'sd39336, 32'sd1180083, 32'sd0, 32'sd0, 32'sd23601667, 32'sd0,
+        32'sd1180083, 32'sd39336, 32'sd0, 32'sd0, 32'sd1180083, 32'sd0,
+        32'sd0, 32'sd0, 32'sd35402500, 32'sd0, 32'sd0, 32'sd708049983,
+        32'sd0, 32'sd0, 32'sd0, 32'sd35402500, 32'sd0, 32'sd708049983,
+        32'sd23601667, 32'sd1180083, 32'sd0, 32'sd0, 32'sd5800000, 32'sd0,
+        32'sd0, 32'sd0, 32'sd708049983, 32'sd708049983, 32'sd0, 32'sd5800000
+    };
+
+    localparam signed [1151:0] A_flat = {
+        32'sd4096,  32'sd0,    32'sd410,  32'sd0,   32'sd20,   32'sd0,
+        32'sd0,     32'sd4096, 32'sd0,    32'sd410, 32'sd0,    32'sd20,
+        32'sd0,     32'sd0,    32'sd4096, 32'sd0,   32'sd410,  32'sd0,
+        32'sd0,     32'sd0,    32'sd0,    32'sd4096,32'sd0,    32'sd410,
+        32'sd0,     32'sd0,    32'sd0,    32'sd0,   32'sd4096, 32'sd0,
+        32'sd0,     32'sd0,    32'sd0,    32'sd0,   32'sd0,    32'sd4096
+    };
+
+    localparam signed [767:0] H_flat = {
+        32'sd4096, 32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd0,
+        32'sd0, 32'sd4096, 32'sd0, 32'sd0, 32'sd0, 32'sd0,
+        32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd4096, 32'sd0,
+        32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd4096
+    };
+
+    localparam signed [511:0] R_flat = {
+        32'sd142643, 32'sd0,      32'sd0,      32'sd0,
+        32'sd0,      32'sd142643, 32'sd0,      32'sd0,
+        32'sd0,      32'sd0,      32'sd142643, 32'sd0,
+        32'sd0,      32'sd0,      32'sd0,      32'sd142643
+    };
 
     /********** Submodule Instantiations **********/
     kalman_predict u_predict (

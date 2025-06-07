@@ -17,8 +17,8 @@ module kalman (
     input rst,
     input start,
 
-    input [2:0] size_state,     // Typically 6
-    input [2:0] size_meas,      // Typically 4
+    input [2:0] size_state,     // Typically 6 but leave configurable
+    input [2:0] size_meas,      // Typically 4 but leave configurable
 
     // Input matrices
     input signed [1151:0] A_flat,

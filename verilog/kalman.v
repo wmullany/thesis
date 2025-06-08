@@ -21,12 +21,8 @@ module kalman (
     input [2:0] size_meas,      // Typically 4 but leave configurable
 
     // Input matrices
-    //input signed [1151:0] A_flat,
     input signed [191:0]  x_flat,
     input signed [1151:0] P_flat,
-    //input signed [1151:0] Q_flat,
-    //input signed [767:0]  H_flat,
-    //input signed [511:0]  R_flat,
     input signed [127:0]  z_flat,
 
     // Outputs

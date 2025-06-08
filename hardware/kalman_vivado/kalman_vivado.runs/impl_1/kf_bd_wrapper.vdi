@@ -1,0 +1,293 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Jun  9 05:40:04 2025
+# Process ID         : 22048
+# Current directory  : C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/impl_1
+# Command line       : vivado.exe -log kf_bd_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source kf_bd_wrapper.tcl -notrace
+# Log file           : C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/impl_1/kf_bd_wrapper.vdi
+# Journal file       : C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/impl_1\vivado.jou
+# Running On         : Laptop45877481
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-1355U
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 16876 MB
+# Swap memory        : 24332 MB
+# Total Virtual      : 41209 MB
+# Available Virtual  : 6589 MB
+#-----------------------------------------------------------
+source kf_bd_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 656.180 ; gain = 226.973
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+Command: link_design -top kf_bd_wrapper -part xc7z007sclg400-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0/kf_bd_KF_0_0.dcp' for cell 'kf_bd_i/KF_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.dcp' for cell 'kf_bd_i/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0.dcp' for cell 'kf_bd_i/axi_iic_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.dcp' for cell 'kf_bd_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.dcp' for cell 'kf_bd_i/rst_ps7_0_50M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0.dcp' for cell 'kf_bd_i/smartconnect_0'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.305 . Memory (MB): peak = 1008.320 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3538 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.xdc] for cell 'kf_bd_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.xdc] for cell 'kf_bd_i/processing_system7_0/inst'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0_board.xdc] for cell 'kf_bd_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0_board.xdc] for cell 'kf_bd_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0.xdc] for cell 'kf_bd_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0.xdc] for cell 'kf_bd_i/smartconnect_0/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/smartconnect.xdc] for cell 'kf_bd_i/smartconnect_0/inst'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/smartconnect.xdc] for cell 'kf_bd_i/smartconnect_0/inst'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_board.xdc] for cell 'kf_bd_i/axi_iic_0/U0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_board.xdc] for cell 'kf_bd_i/axi_iic_0/U0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_board.xdc] for cell 'kf_bd_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_board.xdc] for cell 'kf_bd_i/rst_ps7_0_50M/U0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xdc] for cell 'kf_bd_i/rst_ps7_0_50M/U0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xdc] for cell 'kf_bd_i/rst_ps7_0_50M/U0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xdc] for cell 'kf_bd_i/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xdc:56]
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xdc] for cell 'kf_bd_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0_clocks.xdc] for cell 'kf_bd_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0_clocks.xdc] for cell 'kf_bd_i/axi_dma_0/U0'
+INFO: [Project 1-1714] 65 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1792.422 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+
+17 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1792.422 ; gain = 1078.398
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z007s'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.848 . Memory (MB): peak = 1792.422 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.903 . Memory (MB): peak = 1792.422 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 2174.148 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 2174.148 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.531 . Memory (MB): peak = 2174.148 ; gain = 0.000
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.614 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1ee06606b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.618 . Memory (MB): peak = 2174.148 ; gain = 0.000
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 33 inverters resulting in an inversion of 307 pins
+INFO: [Opt 31-138] Pushed 7 inverter(s) to 12 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 2414ce11e
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.993 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Retarget | Checksum: 2414ce11e
+INFO: [Opt 31-389] Phase Retarget created 48 cells and removed 189 cells
+INFO: [Opt 31-1021] In phase Retarget, 100 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 57 inverter(s) to 61 load pin(s).
+Phase 4 Constant propagation | Checksum: 279928eb6
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Constant propagation | Checksum: 279928eb6
+INFO: [Opt 31-389] Phase Constant propagation created 689 cells and removed 2795 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 100 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2174.148 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Phase 5 Sweep | Checksum: 2a5f8a132
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Sweep | Checksum: 2a5f8a132
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 1007 cells
+INFO: [Opt 31-1021] In phase Sweep, 126 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: 2a5f8a132
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+BUFG optimization | Checksum: 2a5f8a132
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2a5f8a132
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Shift Register Optimization | Checksum: 2a5f8a132
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 20079bace
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Post Processing Netlist | Checksum: 20079bace
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 120 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 15daa559e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 15daa559e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Phase 9 Finalization | Checksum: 15daa559e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |              48  |             189  |                                            100  |
+|  Constant propagation         |             689  |            2795  |                                            100  |
+|  Sweep                        |               0  |            1007  |                                            126  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            120  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 15daa559e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2174.148 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 2 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 3 newly gated: 0 Total Ports: 4
+Ending PowerOpt Patch Enables Task | Checksum: 1dc9373d3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.070 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1dc9373d3
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 2331.918 ; gain = 157.770
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1dc9373d3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2331.918 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1d000da85
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2331.918 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+48 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 2331.918 ; gain = 539.496
+INFO: [Vivado 12-24828] Executing command : report_drc -file kf_bd_wrapper_drc_opted.rpt -pb kf_bd_wrapper_drc_opted.pb -rpx kf_bd_wrapper_drc_opted.rpx
+Command: report_drc -file kf_bd_wrapper_drc_opted.rpt -pb kf_bd_wrapper_drc_opted.pb -rpx kf_bd_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/impl_1/kf_bd_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2331.918 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 2331.918 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/impl_1/kf_bd_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z007s'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC UTLZ-1] Resource utilization: Register as Flip Flop over-utilized in Top Level Design (This design requires more Register as Flip Flop cells than are available in the target device. This design requires 28890 of such cell types but only 28800 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)
+ERROR: [DRC UTLZ-1] Resource utilization: Slice Registers over-utilized in Top Level Design (This design requires more Slice Registers cells than are available in the target device. This design requires 28890 of such cell types but only 28800 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)
+INFO: [Vivado_Tcl 4-198] DRC finished with 2 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.
+62 Infos, 3 Warnings, 0 Critical Warnings and 3 Errors encountered.
+place_design failed
+ERROR: [Common 17-39] 'place_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  9 05:40:46 2025...

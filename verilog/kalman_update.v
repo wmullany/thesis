@@ -12,12 +12,12 @@ module kalman_update (
     input rst,
     input start,
 
-    input [2:0] size_state,      // 6 for state vector length
-    input [2:0] size_meas,       // 4 for measurement vector length
+    //input [2:0] size_state,      // 6 for state vector length
+    //input [2:0] size_meas,       // 4 for measurement vector length
 
     input signed [191:0] xhat_flat,   // xhat [6x1]
     input signed [767:0] K_flat,       // K [6x4] = 
-    input signed [383:0] H_flat,       // H [4x6]
+    //input signed [383:0] H_flat,       // H [4x6]
     input signed [127:0] z_flat,       // z [4x1]
 
     input signed [1151:0] Phat_flat,   // Phat [6x6]
@@ -38,12 +38,19 @@ module kalman_update (
     localparam MULT_KH_P  = 3'd6;
     localparam SUB_MAT    = 3'd7;
     localparam DONE       = 3'd8;
+    
+    localparam signed [767:0] H_flat = {
+        32'sd4096, 32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd0,
+        32'sd0, 32'sd4096, 32'sd0, 32'sd0, 32'sd0, 32'sd0,
+        32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd4096, 32'sd0,
+        32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd4096
+    };
 
     reg [3:0] state = IDLE;
 
     // Control signals for submodules
-    reg start_mm1, start_vec_sub, start_vec_add, start_mm2, start_mm3, start_sub_mat;
-    wire done_mm1, done_vec_sub, done_vec_add, done_mm2, done_mm3, done_sub_mat;
+    reg start_mm1, start_vec_sub, start_vec_add, start_mm2, start_mm3, start_mm4, start_sub_mat;
+    wire done_mm1, done_vec_sub, done_vec_add, done_mm2, done_mm3, done_mm4, done_sub_mat;
 
     // Intermediate wires for results
     wire signed [127:0] Hxhat_flat;      // 4x1 (4 elements * 32 bits)
@@ -52,6 +59,7 @@ module kalman_update (
     wire signed [575:0] KH_flat;          // 6x6
     wire signed [1151:0] KHPhat_flat;     // 6x6
     wire signed [1151:0] P_update_wire;   // 6x6
+    wire signed [191:0] x_update_wire;
 
     // 1) H * xhat --> 4x6 * 6x1 = 4x1
     matrix_multiplication mm1 (
@@ -64,7 +72,7 @@ module kalman_update (
     // 2) z - Hxhat (vector subtract 4x1)
     vector_add_sub vec_sub (
         .clk(clk), .rst(rst), .start(start_vec_sub),
-        .length(size_meas),
+        .length(3'b100),
         .operation(1'b1), // 1 = subtract
         .Ain(z_flat), .Bin(Hxhat_flat),
         .Cout(z_minus_Hxhat),
@@ -74,7 +82,7 @@ module kalman_update (
     // 3) K * (z - Hxhat) (6x4 * 4x1 = 6x1)
     matrix_multiplication mm2 (
         .clk(clk), .rst(rst), .start(start_mm2),
-        .rowsA(size_state), .colsA(size_meas), .colsB(1),
+        .rowsA(3'b110), .colsA(3'b100), .colsB(1),
         .Ain(K_flat), .Bin(z_minus_Hxhat),
         .Cout(K_times_vec), .done(done_mm2)
     );
@@ -82,17 +90,17 @@ module kalman_update (
     // 4) xhat + K * (z - Hxhat) (vector add 6x1)
     vector_add_sub vec_add (
         .clk(clk), .rst(rst), .start(start_vec_add),
-        .length(size_state),
+        .length(3'b110),
         .operation(1'b0), // 0 = add
         .Ain(xhat_flat), .Bin(K_times_vec),
-        .Cout(x_update_flat),
+        .Cout(x_update_wire),
         .done(done_vec_add)
     );
 
     // 5) K * H (6x4 * 4x6 = 6x6)
     matrix_multiplication mm3 (
         .clk(clk), .rst(rst), .start(start_mm3),
-        .rowsA(size_state), .colsA(size_meas), .colsB(size_state),
+        .rowsA(3'b110), .colsA(3'b100), .colsB(3'b110),
         .Ain(K_flat), .Bin(H_flat),
         .Cout(KH_flat), .done(done_mm3)
     );
@@ -100,7 +108,7 @@ module kalman_update (
     // 6) (K * H) * Phat (6x6 * 6x6 = 6x6)
     matrix_multiplication mm4 (
         .clk(clk), .rst(rst), .start(start_mm4),
-        .rowsA(size_state), .colsA(size_state), .colsB(size_state),
+        .rowsA(3'b110), .colsA(3'b110), .colsB(3'b110),
         .Ain(KH_flat), .Bin(Phat_flat),
         .Cout(KHPhat_flat), .done(done_mm4)
     );
@@ -108,7 +116,7 @@ module kalman_update (
     // 7) Phat - (KHPhat) (6x6 matrix subtract)
     matrix_subtract #(.MAX_ELEMS(36)) sub_mat (
         .clk(clk), .rst(rst), .start(start_sub_mat),
-        .rows(size_state), .cols(size_state),
+        .rows(3'b110), .cols(3'b110),
         .Ain(Phat_flat), .Bin(KHPhat_flat),
         .Cout(P_update_wire),
         .done(done_sub_mat)
@@ -162,6 +170,7 @@ module kalman_update (
                 ADD_VEC: begin
                     start_vec_add <= 0;
                     if (done_vec_add) begin
+			x_update_flat <= x_update_wire;
                         start_mm3 <= 1;
                         state <= MULT_KH;
                     end

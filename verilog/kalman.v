@@ -12,13 +12,13 @@
  * Assumes max state size = 6 and measurement size = 4.
  ******************************************************************************/
 
-module kalman (
+module kalman ( 
     input clk,
     input rst,
     input start,
 
-    input [2:0] size_state,     // Typically 6 but leave configurable
-    input [2:0] size_meas,      // Typically 4 but leave configurable
+    //input [2:0] size_state,     // Typically 6 but leave configurable
+    //input [2:0] size_meas,      // Typically 4 but leave configurable
 
     // Input matrices
     input signed [191:0]  x_flat,
@@ -87,11 +87,11 @@ module kalman (
         .clk(clk),
         .rst(rst),
         .start(state == PREDICT),
-        .size(size_state),
-        .A_flat(A_flat),
+        //.size(size_state),
+        //.A_flat(A_flat),
         .x_flat(x_flat),
         .P_flat(P_flat),
-        .Q_flat(Q_flat),
+        //.Q_flat(Q_flat),
         .xhat_flat(xhat_flat),
         .Phat_flat(Phat_flat),
         .done(predict_done)
@@ -112,8 +112,8 @@ module kalman (
         .clk(clk),
         .rst(rst),
         .start(state == UPDATE),
-        .size_state(size_state),
-        .size_meas(size_meas),
+        //.size_state(size_state),
+        //.size_meas(size_meas),
         .xhat_flat(xhat_flat),
         .K_flat(K_flat),
         .H_flat(H_flat),

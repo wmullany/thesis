@@ -56,11 +56,9 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "kf_bd_rst_ps7_0_50M_0_synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param project.hsv.suppressChildGraphs 0
-set_param synth.incrementalSynthesisCache C:/Users/mulla/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-30976-Laptop45877481/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/.Xil/Vivado-19944-Laptop45877481/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_msg_config -id {HDL-1065} -limit 10000
+set_param bd.open.in_stealth_mode 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
@@ -84,7 +82,7 @@ set_property ip_output_repo c:/Users/mulla/Documents/thesis/hardware/kalman_viva
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.srcs/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xci
+read_ip -quiet C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.srcs/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_ooc.xdc]

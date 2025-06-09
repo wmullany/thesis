@@ -97,7 +97,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {HDL-1065} -limit 10000
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -108,9 +108,9 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 3
-  set_param project.hsv.suppressChildGraphs 0
-  set_param synth.incrementalSynthesisCache C:/Users/mulla/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-30976-Laptop45877481/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/.Xil/Vivado-19944-Laptop45877481/incrSyn
   set_param checkpoint.writeSynthRtdsInDcp 1
+  set_param bd.open.in_stealth_mode 1
   set_param runs.launchOptions { -jobs 6  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z007sclg400-1
@@ -121,7 +121,7 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.cache/wt [current_project]
   set_property parent.project_path C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.xpr [current_project]
-  set_property ip_repo_paths c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0 [current_project]
+  set_property ip_repo_paths C:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0 [current_project]
   update_ip_catalog
   set_property ip_output_repo C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
@@ -235,7 +235,7 @@ set rc [catch {
 OPTRACE "read constraints: phys_opt_design" START { }
 OPTRACE "read constraints: phys_opt_design" END { }
 OPTRACE "phys_opt_design" START { }
-  phys_opt_design 
+  phys_opt_design -directive AggressiveExplore
 OPTRACE "phys_opt_design" END { }
 OPTRACE "read constraints: phys_opt_design_post" START { }
 OPTRACE "read constraints: phys_opt_design_post" END { }
@@ -263,7 +263,7 @@ set rc [catch {
 OPTRACE "read constraints: route_design" START { }
 OPTRACE "read constraints: route_design" END { }
 OPTRACE "route_design" START { }
-  route_design 
+  route_design -directive Explore
 OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }

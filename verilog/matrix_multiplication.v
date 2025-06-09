@@ -27,7 +27,7 @@ module matrix_multiplication (
     output reg done        
 );
 
-    integer i, j, k, l;       // Loop counters everywhere
+    reg [6:0] i, j, k, l;       // Loop counters everywhere
 
     reg signed [63:0] sum;    // 64-bit accumulator to avoid overflow madness during multiply-add
 

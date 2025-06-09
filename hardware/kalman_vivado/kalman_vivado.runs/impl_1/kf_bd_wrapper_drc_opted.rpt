@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Mon Jun  9 05:40:42 2025
+| Date         : Mon Jun  9 10:20:20 2025
 | Host         : Laptop45877481 running 64-bit major release  (build 9200)
 | Command      : report_drc -file kf_bd_wrapper_drc_opted.rpt -pb kf_bd_wrapper_drc_opted.pb -rpx kf_bd_wrapper_drc_opted.rpx
 | Design       : kf_bd_wrapper
@@ -24,26 +24,15 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 4
-+----------+----------+----------------------+--------+
-| Rule     | Severity | Description          | Checks |
-+----------+----------+----------------------+--------+
-| UTLZ-1   | Error    | Resource utilization | 2      |
-| REQP-181 | Advisory | writefirst           | 2      |
-+----------+----------+----------------------+--------+
+             Checks found: 2
++----------+----------+-------------+--------+
+| Rule     | Severity | Description | Checks |
++----------+----------+-------------+--------+
+| REQP-181 | Advisory | writefirst  | 2      |
++----------+----------+-------------+--------+
 
 2. REPORT DETAILS
 -----------------
-UTLZ-1#1 Error
-Resource utilization  - PBlock:ROOT
-Register as Flip Flop over-utilized in Top Level Design (This design requires more Register as Flip Flop cells than are available in the target device. This design requires 28890 of such cell types but only 28800 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)ROOT
-Related violations: <none>
-
-UTLZ-1#2 Error
-Resource utilization  - PBlock:ROOT
-Slice Registers over-utilized in Top Level Design (This design requires more Slice Registers cells than are available in the target device. This design requires 28890 of such cell types but only 28800 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)ROOT
-Related violations: <none>
-
 REQP-181#1 Advisory
 writefirst  
 Synchronous clocking is detected for BRAM (kf_bd_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with WRITE_FIRST write-mode. This is the preferred mode for best power characteristics, however it may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.

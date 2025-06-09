@@ -39,12 +39,12 @@ module kalman_predict (
     input clk,
     input rst,
     input start,
-    input [2:0] size, // Matrix dimension (e.g., 6 for 6x6)
+    //input [2:0] size, // Matrix dimension (e.g., 6 for 6x6)
 
-    input signed [1151:0] A_flat,   // A: [size x size]
+    //input signed [1151:0] A_flat,   // A: [size x size]
     input signed [191:0]  x_flat,   // x: [size x 1] (max 6x1)
     input signed [1151:0] P_flat,   // P: [size x size]
-    input signed [1151:0] Q_flat,   // Q: [size x size]
+    //input signed [1151:0] Q_flat,   // Q: [size x size]
 
     output reg signed [191:0] xhat_flat,  // Predicted state
     output reg signed [1151:0] Phat_flat, // Predicted covariance
@@ -55,7 +55,6 @@ module kalman_predict (
     reg [3:0] state;
     localparam IDLE     = 4'd0,
                STATE_MM = 4'd1,
-               PRED_T   = 4'd2,
                COV_MM1  = 4'd3,
                COV_MM2  = 4'd4,
                COV_ADD  = 4'd5,
@@ -63,13 +62,40 @@ module kalman_predict (
 
     /********* Control Signals *********/
     reg start_mm1, start_mm2, start_mm3;
-    reg start_trans, start_add;
+    reg start_add;
 
     wire mm1_done, mm2_done, mm3_done;
-    wire trans_done, add_done;
+    wire add_done;
 
     /********* Intermediate Wires *********/
-    wire signed [1151:0] At_flat;
+
+    localparam signed [1151:0] At_flat = {
+        32'sd4096, 32'sd0,    32'sd0,    32'sd0,    32'sd0,    32'sd0,
+        32'sd0,    32'sd4096, 32'sd0,    32'sd0,    32'sd0,    32'sd0,
+        32'sd410,  32'sd0,    32'sd4096, 32'sd0,    32'sd0,    32'sd0,
+        32'sd0,    32'sd410,  32'sd0,    32'sd4096, 32'sd0,    32'sd0,
+        32'sd20,   32'sd0,    32'sd410,  32'sd0,    32'sd4096, 32'sd0,
+        32'sd0,    32'sd20,   32'sd0,    32'sd410,  32'sd0,    32'sd4096
+    };
+
+    localparam signed [1151:0] A_flat = {
+        32'sd4096,  32'sd0,    32'sd410,  32'sd0,   32'sd20,   32'sd0,
+        32'sd0,     32'sd4096, 32'sd0,    32'sd410, 32'sd0,    32'sd20,
+        32'sd0,     32'sd0,    32'sd4096, 32'sd0,   32'sd410,  32'sd0,
+        32'sd0,     32'sd0,    32'sd0,    32'sd4096,32'sd0,    32'sd410,
+        32'sd0,     32'sd0,    32'sd0,    32'sd0,   32'sd4096, 32'sd0,
+        32'sd0,     32'sd0,    32'sd0,    32'sd0,   32'sd0,    32'sd4096
+    };
+
+    localparam signed [1151:0] Q_flat = {
+        32'sd39336, 32'sd1180083, 32'sd0, 32'sd0, 32'sd23601667, 32'sd0,
+        32'sd1180083, 32'sd39336, 32'sd0, 32'sd0, 32'sd1180083, 32'sd0,
+        32'sd0, 32'sd0, 32'sd35402500, 32'sd0, 32'sd0, 32'sd708049983,
+        32'sd0, 32'sd0, 32'sd0, 32'sd35402500, 32'sd0, 32'sd708049983,
+        32'sd23601667, 32'sd1180083, 32'sd0, 32'sd0, 32'sd5800000, 32'sd0,
+        32'sd0, 32'sd0, 32'sd708049983, 32'sd708049983, 32'sd0, 32'sd5800000
+    };
+
     wire signed [1151:0] temp1_flat;
     wire signed [1151:0] temp2_flat;
     wire signed [1151:0] Phat_wire;
@@ -80,23 +106,15 @@ module kalman_predict (
     // xhat = A * x
     matrix_multiplication mm1 (
         .clk(clk), .rst(rst), .start(start_mm1),
-        .rowsA(size), .colsA(size), .colsB(8'd1),
+        .rowsA(3'b110), .colsA(3'b110), .colsB(8'd1),
         .Ain(A_flat), .Bin(x_flat),
         .Cout(xhat_wire), .done(mm1_done)
-    );
-
-    // At = transpose(A)
-    matrix_transpose trans (
-        .clk(clk), .rst(rst), .start(start_trans),
-        .rows(size), .cols(size),
-        .Ain(A_flat), .Aout(At_flat),
-        .done(trans_done)
     );
 
     // temp1 = A * P
     matrix_multiplication mm2 (
         .clk(clk), .rst(rst), .start(start_mm2),
-        .rowsA(size), .colsA(size), .colsB(size),
+        .rowsA(3'b110), .colsA(3'b110), .colsB(3'b110),
         .Ain(A_flat), .Bin(P_flat),
         .Cout(temp1_flat), .done(mm2_done)
     );
@@ -104,7 +122,7 @@ module kalman_predict (
     // temp2 = temp1 * At
     matrix_multiplication mm3 (
         .clk(clk), .rst(rst), .start(start_mm3),
-        .rowsA(size), .colsA(size), .colsB(size),
+        .rowsA(3'b110), .colsA(3'b110), .colsB(3'b110),
         .Ain(temp1_flat), .Bin(At_flat),
         .Cout(temp2_flat), .done(mm3_done)
     );
@@ -112,7 +130,7 @@ module kalman_predict (
     // Phat = temp2 + Q
     matrix_add #(.MAX_ELEMS(36)) add (
         .clk(clk), .rst(rst), .start(start_add),
-        .rows(size), .cols(size),
+        .rows(3'b110), .cols(3'b110),
         .Ain(temp2_flat), .Bin(Q_flat),
         .Cout(Phat_wire), .done(add_done)
     );
@@ -136,14 +154,6 @@ module kalman_predict (
                     start_mm1 <= 0;
                     if (mm1_done) begin
                         xhat_flat <= xhat_wire;
-                        start_trans <= 1;
-                        state <= PRED_T;
-                    end
-                end
-
-                PRED_T: begin
-                    start_trans <= 0;
-                    if (trans_done) begin
                         start_mm2 <= 1;
                         state <= COV_MM1;
                     end

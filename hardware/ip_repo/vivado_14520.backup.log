@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Jun  9 05:07:50 2025
+# Process ID         : 14520
+# Current directory  : C:/Users/mulla/Documents/thesis/hardware/ip_repo
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent10340 C:\Users\mulla\Documents\thesis\hardware\ip_repo\edit_KF_v1_0.xpr
+# Log file           : C:/Users/mulla/Documents/thesis/hardware/ip_repo/vivado.log
+# Journal file       : C:/Users/mulla/Documents/thesis/hardware/ip_repo\vivado.jou
+# Running On         : Laptop45877481
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-1355U
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 16876 MB
+# Swap memory        : 20015 MB
+# Total Virtual      : 36892 MB
+# Available Virtual  : 7103 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mulla/Documents/thesis/hardware/ip_repo/edit_KF_v1_0.xpr
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2024.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/mulla/Documents/thesis/hardware/ip_repo/edit_KF_v1_0.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:56 ; elapsed = 00:00:29 . Memory (MB): peak = 1644.508 ; gain = 437.539
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  9 05:39:36 2025...

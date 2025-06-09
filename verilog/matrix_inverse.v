@@ -14,6 +14,122 @@
 // ============================================================================
 
 module matrix_inverse (
+    input clk,
+    input rst,
+    input start,
+    input signed [511:0] Ain,        // 16x Q20.12 = 16*32 = 512 bits
+    output reg signed [511:0] Bout,  // Inverse matrix
+    output reg done
+);
+
+    // Internal state
+    reg [3:0] state;
+    reg [3:0] i, j, k;
+
+    // Matrix A and inverse I, flattened
+    reg signed [31:0] A[0:15];  // A[4*i + j] instead of A[i][j]
+    reg signed [31:0] I[0:15];
+
+    // Temporary variables
+    reg signed [31:0] factor, pivot, temp;
+
+    localparam IDLE   = 4'd0;
+    localparam LOAD   = 4'd1;
+    localparam PIVOT  = 4'd2;
+    localparam ELIM   = 4'd3;
+    localparam NORM   = 4'd4;
+    localparam STORE  = 4'd5;
+    localparam DONE   = 4'd6;
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state <= IDLE;
+            done <= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    done <= 0;
+                    if (start) begin
+                        // Unpack Ain into A
+                        for (i = 0; i < 16; i = i + 1) begin
+                            A[i] <= Ain[i*32 +: 32];
+                            I[i] <= 32'sd0;
+                        end
+                        // Set up identity matrix
+                        I[ 0] <= 4096; I[ 5] <= 4096; I[10] <= 4096; I[15] <= 4096;
+                        i <= 0;
+                        state <= PIVOT;
+                    end
+                end
+
+                PIVOT: begin
+                    if (A[4*i + i] == 0) begin
+                        for (k = i+1; k < 4; k = k + 1) begin
+                            if (A[4*k + i] != 0) begin
+                                for (j = 0; j < 4; j = j + 1) begin
+                                    // Swap rows i and k
+                                    temp <= A[4*i + j]; A[4*i + j] <= A[4*k + j]; A[4*k + j] <= temp;
+                                    temp <= I[4*i + j]; I[4*i + j] <= I[4*k + j]; I[4*k + j] <= temp;
+                                end
+                                break;
+                            end
+                        end
+                    end
+                    j <= 0;
+                    state <= ELIM;
+                end
+
+                ELIM: begin
+                    if (j < 4) begin
+                        if (j != i) begin
+                            factor <= (A[4*j + i] <<< 12) / A[4*i + i];  // Q20.12 divide
+                            for (k = 0; k < 4; k = k + 1) begin
+                                A[4*j + k] <= A[4*j + k] - ((A[4*i + k] * factor) >>> 12);
+                                I[4*j + k] <= I[4*j + k] - ((I[4*i + k] * factor) >>> 12);
+                            end
+                        end
+                        j <= j + 1;
+                    end else begin
+                        k <= 0;
+                        state <= NORM;
+                    end
+                end
+
+                NORM: begin
+                    pivot <= A[4*i + i];
+                    if (k < 4) begin
+                        A[4*i + k] <= (A[4*i + k] <<< 12) / pivot;
+                        I[4*i + k] <= (I[4*i + k] <<< 12) / pivot;
+                        k <= k + 1;
+                    end else begin
+                        i <= i + 1;
+                        if (i == 3)
+                            state <= STORE;
+                        else
+                            state <= PIVOT;
+                    end
+                end
+
+                STORE: begin
+                    for (i = 0; i < 16; i = i + 1)
+                        Bout[i*32 +: 32] <= I[i];
+                    state <= DONE;
+                end
+
+                DONE: begin
+                    done <= 1;
+                    if (!start)
+                        state <= IDLE;
+                end
+            endcase
+        end
+    end
+
+endmodule
+
+
+/*
+module matrix_inverse (
     input clk, 
     input rst, 
     input start,    
@@ -21,10 +137,10 @@ module matrix_inverse (
     output reg signed [511:0] Bout,  // Packed Q20.12
     output reg done 
 ); 
-    /*********** Variable Def **********/
-    integer i;
+    
+    reg [5:0] i;
     reg [3:0] state;
-    integer fixed_width = 32;
+    reg [5:0] fixed_width = 32;
 
     reg signed [31:0] A [0:15];       // Q20.12 input matrix
     reg signed [31:0] B [0:15];       // Q20.12 adjugate matrix
@@ -38,7 +154,7 @@ module matrix_inverse (
     reg signed [63:0] tempB [0:15];   // Temp products before rescaling
 
 
-    /*********** Constant Def **********/
+    
     localparam IDLE = 4'd0;
     localparam ADJNT = 4'd1; 
     localparam DETMT = 4'd2; 
@@ -48,6 +164,7 @@ module matrix_inverse (
     localparam DETSCALE = 4'd6;
     localparam INVSCALE = 4'd7;
     localparam DONE = 4'd8;
+
 
     // Main control logic: triggered on clock edge or reset
     always @(posedge clk or posedge rst) begin 
@@ -63,7 +180,7 @@ module matrix_inverse (
                     done <= 0; 
                     if (start) begin
                         // Unpack Ain into A[0..15]
-                        for (i = 0; i < 16; i = i + 1)
+                        for s(i = 0; i < 16; i = i + 1)
                             A[i] <= Ain[i*32 +: 32];
                         det64 <= 0;
                         detinv <= 0;
@@ -193,6 +310,7 @@ module matrix_inverse (
                     r2d2[4] <=  -c3po[18] + c3po[19] + c3po[20] - c3po[21] - c3po[22] + c3po[23];
                     r2d2[5] <=   c3po[24] - c3po[25] - c3po[26] + c3po[27] + c3po[28] - c3po[29];
                     r2d2[6] <=  -c3po[30] + c3po[31] + c3po[32] - c3po[33] - c3po[34] + c3po[35];
+                    
                     r2d2[7] <=   c3po[36] - c3po[37] - c3po[38] + c3po[39] + c3po[40] - c3po[41];
                     r2d2[8] <=   c3po[42] - c3po[43] - c3po[44] + c3po[45] + c3po[46] - c3po[47];
                     r2d2[9] <=  -c3po[48] + c3po[49] + c3po[50] - c3po[51] - c3po[52] + c3po[53];
@@ -251,50 +369,50 @@ module matrix_inverse (
                 INV: begin
                     // Multiply adjugate matrix by determinant reciprocal (division)
 
-                    tempB[0]  <= B[0]  * detinv;  
-                    tempB[1]  <= B[1]  * detinv;  
-                    tempB[2]  <= B[2]  * detinv;  
-                    tempB[3]  <= B[3]  * detinv;  
+                    B[0]  <= B[0]  * detinv;  
+                    B[1]  <= B[1]  * detinv;  
+                    B[2]  <= B[2]  * detinv;  
+                    B[3]  <= B[3]  * detinv;  
 
-                    tempB[4]  <= B[4]  * detinv;  
-                    tempB[5]  <= B[5]  * detinv;  
-                    tempB[6]  <= B[6]  * detinv;  
-                    tempB[7]  <= B[7]  * detinv;  
+                    B[4]  <= B[4]  * detinv;  
+                    B[5]  <= B[5]  * detinv;  
+                    B[6]  <= B[6]  * detinv;  
+                    B[7]  <= B[7]  * detinv;  
 
-                    tempB[8]  <= B[8]  * detinv;  
-                    tempB[9]  <= B[9]  * detinv;  
-                    tempB[10] <= B[10] * detinv;  
-                    tempB[11] <= B[11] * detinv;  
+                    B[8]  <= B[8]  * detinv;  
+                    B[9]  <= B[9]  * detinv;  
+                    B[10] <= B[10] * detinv;  
+                    B[11] <= B[11] * detinv;  
 
-                    tempB[12] <= B[12] * detinv;  
-                    tempB[13] <= B[13] * detinv;  
-                    tempB[14] <= B[14] * detinv;  
-                    tempB[15] <= B[15] * detinv;  
+                    B[12] <= B[12] * detinv;  
+                    B[13] <= B[13] * detinv;  
+                    B[14] <= B[14] * detinv;  
+                    B[15] <= B[15] * detinv;  
 
                     state <= INVSCALE;
 
                 end
                 INVSCALE: begin
                     // Rescale final inverse matrix values down to Q20.12
-                    B[0]  <= tempB[0]  >>> 12;
-                    B[1]  <= tempB[1]  >>> 12;
-                    B[2]  <= tempB[2]  >>> 12;
-                    B[3]  <= tempB[3]  >>> 12;
+                    B[0]  <= B[0]  >>> 12;
+                    B[1]  <= B[1]  >>> 12;
+                    B[2]  <= B[2]  >>> 12;
+                    B[3]  <= B[3]  >>> 12;
 
-                    B[4]  <= tempB[4]  >>> 12;
-                    B[5]  <= tempB[5]  >>> 12;
-                    B[6]  <= tempB[6]  >>> 12;
-                    B[7]  <= tempB[7]  >>> 12;
+                    B[4]  <= B[4]  >>> 12;
+                    B[5]  <= B[5]  >>> 12;
+                    B[6]  <= B[6]  >>> 12;
+                    B[7]  <= B[7]  >>> 12;
 
-                    B[8]  <= tempB[8]  >>> 12;
-                    B[9]  <= tempB[9]  >>> 12;
-                    B[10] <= tempB[10] >>> 12;
-                    B[11] <= tempB[11] >>> 12;
+                    B[8]  <= B[8]  >>> 12;
+                    B[9]  <= B[9]  >>> 12;
+                    B[10] <= B[10] >>> 12;
+                    B[11] <= B[11] >>> 12;
 
-                    B[12] <= tempB[12] >>> 12;
-                    B[13] <= tempB[13] >>> 12;
-                    B[14] <= tempB[14] >>> 12;
-                    B[15] <= tempB[15] >>> 12;
+                    B[12] <= B[12] >>> 12;
+                    B[13] <= B[13] >>> 12;
+                    B[14] <= B[14] >>> 12;
+                    B[15] <= B[15] >>> 12;
 
                     state <= DONE;
 
@@ -313,5 +431,5 @@ module matrix_inverse (
         end
     end 
 endmodule
-
+*/
 

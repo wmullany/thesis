@@ -2,7 +2,6 @@ vhdl xil_defaultlib  \
 "../../../bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_b51c_psr_aclk_0.vhd" \
 "../../../bd/kf_bd/ip/kf_bd_axi_iic_0_0/sim/kf_bd_axi_iic_0_0.vhd" \
 "../../../bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/sim/kf_bd_rst_ps7_0_50M_0.vhd" \
-"../../../bd/kf_bd/ip/kf_bd_axi_bram_ctrl_0_0/sim/kf_bd_axi_bram_ctrl_0_0.vhd" \
 "../../../bd/kf_bd/ip/kf_bd_axi_dma_0_0/sim/kf_bd_axi_dma_0_0.vhd" \
 
 # Do not sort compile order

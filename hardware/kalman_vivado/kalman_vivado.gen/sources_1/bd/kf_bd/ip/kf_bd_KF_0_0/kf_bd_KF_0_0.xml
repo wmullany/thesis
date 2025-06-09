@@ -588,7 +588,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c49f78ab</spirit:value>
+            <spirit:value>9:92f5b575</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -602,11 +602,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jun 08 18:11:37 UTC 2025</spirit:value>
+            <spirit:value>Mon Jun 09 00:18:31 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c49f78ab</spirit:value>
+            <spirit:value>9:92f5b575</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -617,7 +617,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c49f78ab</spirit:value>
+            <spirit:value>9:92f5b575</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -633,11 +633,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jun 08 17:50:32 UTC 2025</spirit:value>
+            <spirit:value>Mon Jun 09 00:12:45 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9a9a71de</spirit:value>
+            <spirit:value>9:b5786f65</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -653,11 +653,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jun 08 18:04:34 UTC 2025</spirit:value>
+            <spirit:value>Mon Jun 09 00:12:45 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:9a9a71de</spirit:value>
+            <spirit:value>9:b5786f65</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -673,11 +673,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jun 08 17:50:32 UTC 2025</spirit:value>
+            <spirit:value>Mon Jun 09 00:12:45 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c49f78ab</spirit:value>
+            <spirit:value>9:92f5b575</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -693,11 +693,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Jun 08 18:04:34 UTC 2025</spirit:value>
+            <spirit:value>Mon Jun 09 00:12:45 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:c49f78ab</spirit:value>
+            <spirit:value>9:92f5b575</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -919,7 +919,7 @@
         <spirit:name>C_M00_AXIS_START_COUNT</spirit:name>
         <spirit:displayName>C M00 AXIS START COUNT</spirit:displayName>
         <spirit:description>Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.</spirit:description>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M00_AXIS_START_COUNT" spirit:order="5" spirit:minimum="1" spirit:rangeType="long">32</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_M00_AXIS_START_COUNT" spirit:order="5" spirit:minimum="1" spirit:rangeType="long">8</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -974,55 +974,55 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/hdl/KF_slave_stream_v1_0_S01_AXIS.v</spirit:name>
+        <spirit:name>../../ipshared/7149/hdl/KF_slave_stream_v1_0_S01_AXIS.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/hdl/KF_master_stream_v1_0_M00_AXIS.v</spirit:name>
+        <spirit:name>../../ipshared/7149/hdl/KF_master_stream_v1_0_M00_AXIS.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/gain.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/gain.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/kalman.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/kalman.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/kalman_predict.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/kalman_predict.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/kalman_update.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/kalman_update.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_add.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_add.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_inverse.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_inverse.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_multiplication.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_multiplication.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_subtract.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_subtract.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_transpose.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_transpose.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/vector_add_sub.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/vector_add_sub.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/hdl/KF.v</spirit:name>
+        <spirit:name>../../ipshared/7149/hdl/KF.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1037,55 +1037,55 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/hdl/KF_slave_stream_v1_0_S01_AXIS.v</spirit:name>
+        <spirit:name>../../ipshared/7149/hdl/KF_slave_stream_v1_0_S01_AXIS.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/hdl/KF_master_stream_v1_0_M00_AXIS.v</spirit:name>
+        <spirit:name>../../ipshared/7149/hdl/KF_master_stream_v1_0_M00_AXIS.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/gain.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/gain.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/kalman.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/kalman.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/kalman_predict.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/kalman_predict.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/kalman_update.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/kalman_update.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_add.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_add.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_inverse.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_inverse.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_multiplication.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_multiplication.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_subtract.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_subtract.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/matrix_transpose.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/matrix_transpose.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/src/vector_add_sub.v</spirit:name>
+        <spirit:name>../../ipshared/7149/src/vector_add_sub.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/58cd/hdl/KF.v</spirit:name>
+        <spirit:name>../../ipshared/7149/hdl/KF.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1130,7 +1130,7 @@
       <spirit:name>C_M00_AXIS_START_COUNT</spirit:name>
       <spirit:displayName>C M00 AXIS START COUNT</spirit:displayName>
       <spirit:description>Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_START_COUNT" spirit:order="5" spirit:minimum="1" spirit:rangeType="long">32</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_START_COUNT" spirit:order="5" spirit:minimum="1" spirit:rangeType="long">8</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -1140,7 +1140,7 @@
   <spirit:vendorExtensions>
     <xilinx:coreExtensions>
       <xilinx:displayName>KF_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>12</xilinx:coreRevision>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M00_AXIS.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
@@ -1184,13 +1184,14 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S01_AXIS_CLK.FREQ_TOLERANCE_HZ" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S01_AXIS_CLK.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S01_AXIS_RST.POLARITY" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.C_M00_AXIS_START_COUNT" xilinx:valueSource="user"/>
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="2cdcfe1f"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="0e659c01"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c656cb8e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="093936bb"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="26706538"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="f4e973c1"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="bab6834f"/>

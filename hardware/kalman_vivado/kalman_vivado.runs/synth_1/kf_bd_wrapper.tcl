@@ -57,10 +57,10 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_param project.hsv.suppressChildGraphs 0
-set_param synth.incrementalSynthesisCache C:/Users/mulla/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-30976-Laptop45877481/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/.Xil/Vivado-19944-Laptop45877481/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
-set_msg_config -id {HDL-1065} -limit 10000
+set_param bd.open.in_stealth_mode 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -82,7 +82,7 @@ set_property ip_output_repo c:/Users/mulla/Documents/thesis/hardware/kalman_viva
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/hdl/kf_bd_wrapper.v
+read_verilog -library xil_defaultlib C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/hdl/kf_bd_wrapper.v
 add_files C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.srcs/sources_1/bd/kf_bd/kf_bd.bd
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0_board.xdc]
@@ -151,12 +151,10 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
-
-read_checkpoint -auto_incremental -incremental C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.srcs/utils_1/imports/synth_1/kf_bd_wrapper.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top kf_bd_wrapper -part xc7z007sclg400-1 -bufg 8 -directive AreaOptimized_high -resource_sharing on
+synth_design -top kf_bd_wrapper -part xc7z007sclg400-1 -flatten_hierarchy full -directive AreaOptimized_high -global_retiming off -fsm_extraction gray -control_set_opt_threshold 1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -169,7 +167,6 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef kf_bd_wrapper.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-generate_parallel_reports -reports { "report_utilization -file kf_bd_wrapper_utilization_synth.rpt -pb kf_bd_wrapper_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Mon Jun  9 01:22:55 2025
+-- Date        : Mon Jun  9 08:57:50 2025
 -- Host        : Laptop45877481 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top kf_bd_rst_ps7_0_50M_0 -prefix
---               kf_bd_rst_ps7_0_50M_0_ kf_bd_rst_ps7_0_50M_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_sim_netlist.vhdl
 -- Design      : kf_bd_rst_ps7_0_50M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,15 +17,12 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity kf_bd_rst_ps7_0_50M_0_cdc_sync is
   port (
-    lpf_asr_reg : out STD_LOGIC;
     scndry_out : out STD_LOGIC;
-    lpf_asr : in STD_LOGIC;
-    p_1_in : in STD_LOGIC;
-    p_2_in : in STD_LOGIC;
-    asr_lpf : in STD_LOGIC_VECTOR ( 0 to 0 );
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of kf_bd_rst_ps7_0_50M_0_cdc_sync : entity is "cdc_sync";
 end kf_bd_rst_ps7_0_50M_0_cdc_sync;
 
 architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_cdc_sync is
@@ -33,7 +30,6 @@ architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_cdc_sync is
   signal \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\ : STD_LOGIC;
   signal Q : STD_LOGIC;
   signal asr_d1 : STD_LOGIC;
-  signal \^scndry_out\ : STD_LOGIC;
   attribute ASYNC_REG : boolean;
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM : string;
@@ -55,7 +51,6 @@ architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_cdc_sync is
   attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "PRIMITIVE";
 begin
-  scndry_out <= \^scndry_out\;
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -105,20 +100,8 @@ begin
       C => slowest_sync_clk,
       CE => '1',
       D => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\,
-      Q => \^scndry_out\,
+      Q => scndry_out,
       R => '0'
-    );
-lpf_asr_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"EAAAAAA8"
-    )
-        port map (
-      I0 => lpf_asr,
-      I1 => p_1_in,
-      I2 => p_2_in,
-      I3 => \^scndry_out\,
-      I4 => asr_lpf(0),
-      O => lpf_asr_reg
     );
 end STRUCTURE;
 library IEEE;
@@ -127,12 +110,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity kf_bd_rst_ps7_0_50M_0_cdc_sync_0 is
   port (
-    lpf_exr_reg : out STD_LOGIC;
     scndry_out : out STD_LOGIC;
-    lpf_exr : in STD_LOGIC;
-    p_1_in4_in : in STD_LOGIC;
-    p_2_in3_in : in STD_LOGIC;
-    exr_lpf : in STD_LOGIC_VECTOR ( 0 to 0 );
     mb_debug_sys_rst : in STD_LOGIC;
     ext_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
@@ -146,7 +124,6 @@ architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_cdc_sync_0 is
   signal \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\ : STD_LOGIC;
   signal Q : STD_LOGIC;
   signal exr_d1 : STD_LOGIC;
-  signal \^scndry_out\ : STD_LOGIC;
   attribute ASYNC_REG : boolean;
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM : string;
@@ -168,7 +145,6 @@ architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_cdc_sync_0 is
   attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "PRIMITIVE";
 begin
-  scndry_out <= \^scndry_out\;
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -219,20 +195,8 @@ begin
       C => slowest_sync_clk,
       CE => '1',
       D => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\,
-      Q => \^scndry_out\,
+      Q => scndry_out,
       R => '0'
-    );
-lpf_exr_i_1: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"EAAAAAA8"
-    )
-        port map (
-      I0 => lpf_exr,
-      I1 => p_1_in4_in,
-      I2 => p_2_in3_in,
-      I3 => \^scndry_out\,
-      I4 => exr_lpf(0),
-      O => lpf_exr_reg
     );
 end STRUCTURE;
 library IEEE;
@@ -246,6 +210,8 @@ entity kf_bd_rst_ps7_0_50M_0_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of kf_bd_rst_ps7_0_50M_0_upcnt_n : entity is "upcnt_n";
 end kf_bd_rst_ps7_0_50M_0_upcnt_n;
 
 architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_upcnt_n is
@@ -410,23 +376,17 @@ entity kf_bd_rst_ps7_0_50M_0_lpf is
     ext_reset_in : in STD_LOGIC;
     aux_reset_in : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of kf_bd_rst_ps7_0_50M_0_lpf : entity is "lpf";
 end kf_bd_rst_ps7_0_50M_0_lpf;
 
 architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_lpf is
-  signal \ACTIVE_LOW_AUX.ACT_LO_AUX_n_0\ : STD_LOGIC;
-  signal \ACTIVE_LOW_EXT.ACT_LO_EXT_n_0\ : STD_LOGIC;
   signal Q : STD_LOGIC;
-  signal asr_lpf : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal exr_lpf : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal asr_lpf_0 : STD_LOGIC;
   signal lpf_asr : STD_LOGIC;
   signal lpf_exr : STD_LOGIC;
   signal \lpf_int0__0\ : STD_LOGIC;
-  signal p_1_in : STD_LOGIC;
-  signal p_1_in4_in : STD_LOGIC;
-  signal p_2_in : STD_LOGIC;
-  signal p_2_in3_in : STD_LOGIC;
-  signal p_3_in1_in : STD_LOGIC;
-  signal p_3_in6_in : STD_LOGIC;
+  signal p_0_in : STD_LOGIC;
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of POR_SRL_I : label is "SRL16";
   attribute XILINX_TRANSFORM_PINMAP : string;
@@ -438,92 +398,16 @@ architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_lpf is
 begin
 \ACTIVE_LOW_AUX.ACT_LO_AUX\: entity work.kf_bd_rst_ps7_0_50M_0_cdc_sync
      port map (
-      asr_lpf(0) => asr_lpf(0),
       aux_reset_in => aux_reset_in,
-      lpf_asr => lpf_asr,
-      lpf_asr_reg => \ACTIVE_LOW_AUX.ACT_LO_AUX_n_0\,
-      p_1_in => p_1_in,
-      p_2_in => p_2_in,
-      scndry_out => p_3_in1_in,
+      scndry_out => asr_lpf_0,
       slowest_sync_clk => slowest_sync_clk
     );
 \ACTIVE_LOW_EXT.ACT_LO_EXT\: entity work.kf_bd_rst_ps7_0_50M_0_cdc_sync_0
      port map (
-      exr_lpf(0) => exr_lpf(0),
       ext_reset_in => ext_reset_in,
-      lpf_exr => lpf_exr,
-      lpf_exr_reg => \ACTIVE_LOW_EXT.ACT_LO_EXT_n_0\,
       mb_debug_sys_rst => mb_debug_sys_rst,
-      p_1_in4_in => p_1_in4_in,
-      p_2_in3_in => p_2_in3_in,
-      scndry_out => p_3_in6_in,
+      scndry_out => p_0_in,
       slowest_sync_clk => slowest_sync_clk
-    );
-\AUX_LPF[1].asr_lpf_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => p_3_in1_in,
-      Q => p_2_in,
-      R => '0'
-    );
-\AUX_LPF[2].asr_lpf_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => p_2_in,
-      Q => p_1_in,
-      R => '0'
-    );
-\AUX_LPF[3].asr_lpf_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => p_1_in,
-      Q => asr_lpf(0),
-      R => '0'
-    );
-\EXT_LPF[1].exr_lpf_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => p_3_in6_in,
-      Q => p_2_in3_in,
-      R => '0'
-    );
-\EXT_LPF[2].exr_lpf_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => p_2_in3_in,
-      Q => p_1_in4_in,
-      R => '0'
-    );
-\EXT_LPF[3].exr_lpf_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => slowest_sync_clk,
-      CE => '1',
-      D => p_1_in4_in,
-      Q => exr_lpf(0),
-      R => '0'
     );
 POR_SRL_I: unisim.vcomponents.SRL16E
     generic map(
@@ -546,7 +430,7 @@ lpf_asr_reg: unisim.vcomponents.FDRE
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => \ACTIVE_LOW_AUX.ACT_LO_AUX_n_0\,
+      D => asr_lpf_0,
       Q => lpf_asr,
       R => '0'
     );
@@ -557,7 +441,7 @@ lpf_exr_reg: unisim.vcomponents.FDRE
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => \ACTIVE_LOW_EXT.ACT_LO_EXT_n_0\,
+      D => p_0_in,
       Q => lpf_exr,
       R => '0'
     );
@@ -598,6 +482,8 @@ entity kf_bd_rst_ps7_0_50M_0_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of kf_bd_rst_ps7_0_50M_0_sequence_psr : entity is "sequence_psr";
 end kf_bd_rst_ps7_0_50M_0_sequence_psr;
 
 architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_sequence_psr is
@@ -921,11 +807,11 @@ entity kf_bd_rst_ps7_0_50M_0_proc_sys_reset is
   attribute C_AUX_RESET_HIGH : string;
   attribute C_AUX_RESET_HIGH of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is "1'b0";
   attribute C_AUX_RST_WIDTH : integer;
-  attribute C_AUX_RST_WIDTH of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is 4;
+  attribute C_AUX_RST_WIDTH of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is 1;
   attribute C_EXT_RESET_HIGH : string;
   attribute C_EXT_RESET_HIGH of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is "1'b0";
   attribute C_EXT_RST_WIDTH : integer;
-  attribute C_EXT_RST_WIDTH of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is 4;
+  attribute C_EXT_RST_WIDTH of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is 1;
   attribute C_FAMILY : string;
   attribute C_FAMILY of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is "zynq";
   attribute C_NUM_BUS_RST : integer;
@@ -936,6 +822,8 @@ entity kf_bd_rst_ps7_0_50M_0_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is 1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of kf_bd_rst_ps7_0_50M_0_proc_sys_reset : entity is "proc_sys_reset";
 end kf_bd_rst_ps7_0_50M_0_proc_sys_reset;
 
 architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0_proc_sys_reset is
@@ -1073,11 +961,11 @@ architecture STRUCTURE of kf_bd_rst_ps7_0_50M_0 is
   attribute C_AUX_RESET_HIGH : string;
   attribute C_AUX_RESET_HIGH of U0 : label is "1'b0";
   attribute C_AUX_RST_WIDTH : integer;
-  attribute C_AUX_RST_WIDTH of U0 : label is 4;
+  attribute C_AUX_RST_WIDTH of U0 : label is 1;
   attribute C_EXT_RESET_HIGH : string;
   attribute C_EXT_RESET_HIGH of U0 : label is "1'b0";
   attribute C_EXT_RST_WIDTH : integer;
-  attribute C_EXT_RST_WIDTH of U0 : label is 4;
+  attribute C_EXT_RST_WIDTH of U0 : label is 1;
   attribute C_FAMILY : string;
   attribute C_FAMILY of U0 : label is "zynq";
   attribute C_NUM_BUS_RST : integer;

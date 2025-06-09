@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xCE47AA6493F684A4",
+      "boundary_crc": "0xCE47AA6459010F99",
       "design_src": "SBD",
       "device": "xc7z007sclg400-1",
       "name": "bd_b51c",
@@ -441,7 +441,7 @@
             "value_src": "default"
           },
           "MAX_BURST_LENGTH": {
-            "value": "16",
+            "value": "8",
             "value_src": "user_prop"
           },
           "NUM_READ_OUTSTANDING": {

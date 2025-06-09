@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Jun  9 07:36:58 2025
+# Process ID         : 45432
+# Current directory  : C:/Users/mulla/Documents/thesis/hardware/ip_repo
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent12228 C:\Users\mulla\Documents\thesis\hardware\ip_repo\edit_KF_v1_0.xpr
+# Log file           : C:/Users/mulla/Documents/thesis/hardware/ip_repo/vivado.log
+# Journal file       : C:/Users/mulla/Documents/thesis/hardware/ip_repo\vivado.jou
+# Running On         : Laptop45877481
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-1355U
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 16876 MB
+# Swap memory        : 21297 MB
+# Total Virtual      : 38174 MB
+# Available Virtual  : 5908 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mulla/Documents/thesis/hardware/ip_repo/edit_KF_v1_0.xpr
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file C:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0/component.xml
+set_property core_revision 13 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0

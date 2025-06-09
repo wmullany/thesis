@@ -30,8 +30,8 @@ module kalman_gain (
     input start,
 
     input signed [1151:0] Phat_flat,  // 6x6 (36 elements)
-    input signed [767:0]  H_flat,     // 4x6 (24 elements)
-    input signed [511:0]  R_flat,     // 4x4 (16 elements)
+    //input signed [767:0]  H_flat,     // 4x6 (24 elements)
+    //input signed [511:0]  R_flat,     // 4x4 (16 elements)
 
     output reg signed [767:0] K_flat, // 6x4 (24 elements)
     output reg done
@@ -40,7 +40,6 @@ module kalman_gain (
     // States
     reg [3:0] state;
     localparam IDLE = 4'd0;
-    localparam TRANSPOSE = 4'd1;
     localparam MM1 = 4'd2;
     localparam MM2 = 4'd3;
     localparam MM3 = 4'd4;
@@ -50,12 +49,36 @@ module kalman_gain (
     localparam DONE = 4'd8;
 
     // Control signals
-    reg start_trans, start_mm1, start_mm2, start_mm3, start_add, start_inv, start_mm4;
+    reg start_mm1, start_mm2, start_mm3, start_add, start_inv, start_mm4;
 
-    wire done_trans, done_mm1, done_mm2, done_mm3, done_add, done_inv, done_mm4;
+    wire done_mm1, done_mm2, done_mm3, done_add, done_inv, done_mm4;
+    wire [767:0] K_flat_wire;
 
     // Intermediate wires for outputs
-    wire signed [767:0] HT_flat;      // 6x4 (transpose of H)
+    localparam signed [767:0] HT_flat = {
+        32'sd4096, 32'sd0,    32'sd0,    32'sd0,    // Row 0
+        32'sd0,    32'sd4096, 32'sd0,    32'sd0,    // Row 1
+        32'sd0,    32'sd0,    32'sd0,    32'sd0,    // Row 2
+        32'sd0,    32'sd0,    32'sd0,    32'sd0,    // Row 3
+        32'sd0,    32'sd0,    32'sd4096, 32'sd0,    // Row 4
+        32'sd0,    32'sd0,    32'sd0,    32'sd4096  // Row 5
+    };      // 6x4 (transpose of H)
+
+    localparam signed [767:0] H_flat = {
+        32'sd4096, 32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd0,
+        32'sd0, 32'sd4096, 32'sd0, 32'sd0, 32'sd0, 32'sd0,
+        32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd4096, 32'sd0,
+        32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd0, 32'sd4096
+    };
+
+    localparam signed [511:0] R_flat = {
+        32'sd142643, 32'sd0,      32'sd0,      32'sd0,
+        32'sd0,      32'sd142643, 32'sd0,      32'sd0,
+        32'sd0,      32'sd0,      32'sd142643, 32'sd0,
+        32'sd0,      32'sd0,      32'sd0,      32'sd142643
+    };
+
+
     wire signed [767:0] temp1_flat;   // 6x4 (Phat * HT)
     wire signed [767:0] temp2_flat;   // 4x6 (H * Phat)
     wire signed [511:0] temp3_flat;   // 4x4 (H * Phat * HT)
@@ -63,6 +86,7 @@ module kalman_gain (
     wire signed [511:0] inv_flat;     // 4x4 inverse of temp4
 
     // Instantiate transpose: HT = transpose(H)
+    /*
     matrix_transpose transpose_inst (
         .clk(clk), .rst(rst), .start(start_trans),
         .rows(3'd4), .cols(3'd6),  // transpose 4x6 -> 6x4
@@ -70,6 +94,7 @@ module kalman_gain (
         .Aout(HT_flat),
         .done(done_trans)
     );
+    */
 
     // MM1: temp1 = Phat * HT  (6x6 * 6x4 = 6x4)
     matrix_multiplication mm1 (
@@ -117,7 +142,7 @@ module kalman_gain (
         .clk(clk), .rst(rst), .start(start_mm4),
         .rowsA(3'd6), .colsA(3'd4), .colsB(3'd4),
         .Ain(temp1_flat), .Bin(inv_flat),
-        .Cout(K_flat), .done(done_mm4)
+        .Cout(K_flat_wire), .done(done_mm4)
     );
 
     // FSM control
@@ -125,17 +150,17 @@ module kalman_gain (
         if (rst) begin
             state <= IDLE;
             done <= 0;
-            start_trans <= 0; start_mm1 <= 0; start_mm2 <= 0; start_mm3 <= 0; start_add <= 0; start_inv <= 0; start_mm4 <= 0;
+            start_mm1 <= 0; start_mm2 <= 0; start_mm3 <= 0; start_add <= 0; start_inv <= 0; start_mm4 <= 0;
         end else begin
             case (state)
                 IDLE: begin
                     done <= 0;
                     if (start) begin
-                        start_trans <= 1;
-                        state <= TRANSPOSE;
+                        start_mm1 <= 1;
+                        state <= MM1;
                     end
                 end
-
+/*
                 TRANSPOSE: begin
                     start_trans <= 0;
                     if (done_trans) begin
@@ -143,7 +168,7 @@ module kalman_gain (
                         state <= MM1;
                     end
                 end
-
+*/
                 MM1: begin
                     start_mm1 <= 0;
                     if (done_mm1) begin
@@ -187,6 +212,7 @@ module kalman_gain (
                 MM4: begin
                     start_mm4 <= 0;
                     if (done_mm4) begin
+                        K_flat <= K_flat_wire;
                         done <= 1;
                         state <= DONE;
                     end

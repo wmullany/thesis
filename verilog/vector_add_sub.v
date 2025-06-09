@@ -13,22 +13,24 @@ module vector_add_sub (
     input rst, 
     input start, 
     input length, // vector of 4 or 6
-    input operation // 0 for add, 1 for subtract
+    input operation, // 0 for add, 1 for subtract
     input signed [191:0] Ain, 
     input signed [191:0] Bin, // Where this code should go
-    output reg signed [191:0] Cout
+    output reg signed [191:0] Cout,
+    output reg done  
 
-)
+);
     /*********** Variable Def **********/
     reg [1:0] state; 
-    reg signed [31:0] A [length:0], 
-    reg signed [31:0] B [length:0],
-    reg signed [31:0] C [length:0],
+    reg [4:0] i; 
+    reg signed [31:0] A [0:5]; 
+    reg signed [31:0] B [0:5];
+    reg signed [31:0] C [0:5];
 
     /*********** Constant Def **********/
     localparam IDLE = 2'd0;
-    localparam ADD = 2'd0;
-    localparam SUB = 2'd2;
+    localparam COMPUTE = 2'd0;
+    localparam PACK = 2'd2;
     localparam DONE = 2'd3;
 
     // Main control logic: triggered on clock edge or reset

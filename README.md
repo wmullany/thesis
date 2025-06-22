@@ -12,6 +12,8 @@ This project implements a real-time **Kalman Filter** system on the **Coraz7 Zyn
 ├── README.md # Project documentation
 ├── .gitignore # Ignores Vivado/Vitis-generated binaries and logs
 
+Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
+
 
 ---
 

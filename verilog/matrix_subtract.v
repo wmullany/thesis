@@ -1,3 +1,15 @@
+/**
+ * @module matrix_subtract
+ * @brief Performs element-wise subtraction of two input matrices (A - B).
+ *
+ * This module subtracts two signed matrices `Ain` and `Bin` of configurable size (up to 6x6)
+ * and outputs the result in `Cout`. The operation is controlled via a `start` signal and runs
+ * over multiple clock cycles using a simple FSM.
+ *
+ * The matrices are provided as flat 1D packed vectors, with each element being 32 bits wide.
+ * Internally, the vectors are unpacked, element-wise subtraction is performed, and the result
+ * is repacked for output.
+ */
 module matrix_subtract #(
     parameter MAX_ELEMS = 36   // Max 6x6 = 36
 )(
@@ -17,9 +29,9 @@ module matrix_subtract #(
     reg [5:0] i;                // Up to 36 elements
     reg [3:0] state;
 
-    reg signed [31:0] A [0:MAX_ELEMS-1];
-    reg signed [31:0] B [0:MAX_ELEMS-1];
-    reg signed [31:0] C [0:MAX_ELEMS-1];
+    reg signed [31:0] A_mem [0:MAX_ELEMS-1];
+    reg signed [31:0] B_mem [0:MAX_ELEMS-1];
+    reg signed [31:0] C_mem [0:MAX_ELEMS-1];
 
     reg [5:0] total_elems;
 
@@ -47,8 +59,8 @@ module matrix_subtract #(
                 end
 
                 UNPACK: begin
-                    A[i] <= Ain[i*32 +: 32];
-                    B[i] <= Bin[i*32 +: 32];
+                    A_mem[i] <= Ain[i*32 +: 32];
+                    B_mem[i] <= Bin[i*32 +: 32];
                     i <= i + 1;
                     if (i + 1 == total_elems)
                         state <= SUB;
@@ -60,8 +72,8 @@ module matrix_subtract #(
                 end
 
                 PACK: begin
-                    C[i] <= A[i] - B[i];
-                    Cout[i*32 +: 32] <= A[i] - B[i];
+                    //C[i] <= A[i] - B[i];
+                    Cout[i*32 +: 32] <= A_mem[i] - B_mem[i];
                     i <= i + 1;
                     if (i + 1 == total_elems)
                         state <= DONE;

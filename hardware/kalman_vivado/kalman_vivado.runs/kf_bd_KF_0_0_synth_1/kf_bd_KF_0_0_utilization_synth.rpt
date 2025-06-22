@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Mon Jun  9 10:18:31 2025
+| Date         : Fri Jun 13 23:11:34 2025
 | Host         : Laptop45877481 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file kf_bd_KF_0_0_utilization_synth.rpt -pb kf_bd_KF_0_0_utilization_synth.pb
 | Design       : kf_bd_KF_0_0
@@ -28,18 +28,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 1546 |     0 |          0 |     14400 | 10.74 |
-|   LUT as Logic          | 1546 |     0 |          0 |     14400 | 10.74 |
-|   LUT as Memory         |    0 |     0 |          0 |      6000 |  0.00 |
-| Slice Registers         | 2257 |     0 |          0 |     28800 |  7.84 |
-|   Register as Flip Flop | 2257 |     0 |          0 |     28800 |  7.84 |
-|   Register as Latch     |    0 |     0 |          0 |     28800 |  0.00 |
-| F7 Muxes                |  161 |     0 |          0 |      8800 |  1.83 |
-| F8 Muxes                |    0 |     0 |          0 |      4400 |  0.00 |
-+-------------------------+------+-------+------------+-----------+-------+
++-------------------------+-------+-------+------------+-----------+--------+
+|        Site Type        |  Used | Fixed | Prohibited | Available |  Util% |
++-------------------------+-------+-------+------------+-----------+--------+
+| Slice LUTs*             | 15833 |     0 |          0 |     14400 | 109.95 |
+|   LUT as Logic          | 15833 |     0 |          0 |     14400 | 109.95 |
+|   LUT as Memory         |     0 |     0 |          0 |      6000 |   0.00 |
+| Slice Registers         | 43760 |     0 |          0 |     28800 | 151.94 |
+|   Register as Flip Flop | 43760 |     0 |          0 |     28800 | 151.94 |
+|   Register as Latch     |     0 |     0 |          0 |     28800 |   0.00 |
+| F7 Muxes                |  2955 |     0 |          0 |      8800 |  33.58 |
+| F8 Muxes                |   873 |     0 |          0 |      4400 |  19.84 |
++-------------------------+-------+-------+------------+-----------+--------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 Warning! For any ECO changes, please run place_design if there are unplaced instances
@@ -57,10 +57,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 15    |          Yes |           - |          Set |
-| 1145  |          Yes |           - |        Reset |
-| 2     |          Yes |         Set |            - |
-| 1095  |          Yes |       Reset |            - |
+| 16    |          Yes |           - |          Set |
+| 1363  |          Yes |           - |        Reset |
+| 269   |          Yes |         Set |            - |
+| 42112 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -80,11 +80,12 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 3. DSP
 ------
 
-+-----------+------+-------+------------+-----------+-------+
-| Site Type | Used | Fixed | Prohibited | Available | Util% |
-+-----------+------+-------+------------+-----------+-------+
-| DSPs      |    0 |     0 |          0 |        66 |  0.00 |
-+-----------+------+-------+------------+-----------+-------+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |   52 |     0 |          0 |        66 | 78.79 |
+|   DSP48E1 only |   52 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
 
 
 4. IO and GT Specific
@@ -146,22 +147,24 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| LUT2     | 1162 |                 LUT |
-| FDCE     | 1145 |        Flop & Latch |
-| FDRE     | 1095 |        Flop & Latch |
-| LUT3     |  631 |                 LUT |
-| CARRY4   |  396 |          CarryLogic |
-| LUT6     |  375 |                 LUT |
-| MUXF7    |  161 |               MuxFx |
-| LUT4     |   67 |                 LUT |
-| LUT5     |   27 |                 LUT |
-| FDPE     |   15 |        Flop & Latch |
-| LUT1     |   11 |                 LUT |
-| FDSE     |    2 |        Flop & Latch |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| FDRE     | 42112 |        Flop & Latch |
+| LUT6     |  7541 |                 LUT |
+| LUT3     |  3963 |                 LUT |
+| MUXF7    |  2955 |               MuxFx |
+| LUT5     |  2803 |                 LUT |
+| LUT2     |  1895 |                 LUT |
+| FDCE     |  1363 |        Flop & Latch |
+| CARRY4   |  1081 |          CarryLogic |
+| MUXF8    |   873 |               MuxFx |
+| LUT4     |   506 |                 LUT |
+| FDSE     |   269 |        Flop & Latch |
+| LUT1     |   101 |                 LUT |
+| DSP48E1  |    52 |    Block Arithmetic |
+| FDPE     |    16 |        Flop & Latch |
++----------+-------+---------------------+
 
 
 8. Black Boxes

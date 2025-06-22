@@ -67,13 +67,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="19"/>
-    <Option Name="WTModelSimExportSim" Val="19"/>
-    <Option Name="WTQuestaExportSim" Val="19"/>
+    <Option Name="WTXSimExportSim" Val="52"/>
+    <Option Name="WTModelSimExportSim" Val="52"/>
+    <Option Name="WTQuestaExportSim" Val="52"/>
     <Option Name="WTIesExportSim" Val="0"/>
     <Option Name="WTVcsExportSim" Val="0"/>
-    <Option Name="WTRivieraExportSim" Val="19"/>
-    <Option Name="WTActivehdlExportSim" Val="19"/>
+    <Option Name="WTRivieraExportSim" Val="52"/>
+    <Option Name="WTActivehdlExportSim" Val="52"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -100,17 +100,11 @@
         <CompFileExtendedInfo CompFileName="kf_bd.bd" FileRelPathName="ip/kf_bd_KF_0_0/kf_bd_KF_0_0.xci">
           <Proxy FileSetName="kf_bd_KF_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="kf_bd.bd" FileRelPathName="ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xci">
-          <Proxy FileSetName="kf_bd_axi_dma_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="kf_bd.bd" FileRelPathName="ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0.xci">
-          <Proxy FileSetName="kf_bd_axi_iic_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="kf_bd.bd" FileRelPathName="ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.xci">
           <Proxy FileSetName="kf_bd_processing_system7_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="kf_bd.bd" FileRelPathName="ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xci">
-          <Proxy FileSetName="kf_bd_rst_ps7_0_50M_0"/>
+        <CompFileExtendedInfo CompFileName="kf_bd.bd" FileRelPathName="ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0.xci">
+          <Proxy FileSetName="kf_bd_smartconnect_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PGENDIR/sources_1/bd/kf_bd/hdl/kf_bd_wrapper.v">
@@ -171,27 +165,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="kf_bd_axi_iic_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/kf_bd_axi_iic_0_0" RelGenDir="$PGENDIR/kf_bd_axi_iic_0_0">
-      <Config>
-        <Option Name="TopModule" Val="kf_bd_axi_iic_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="kf_bd_rst_ps7_0_50M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/kf_bd_rst_ps7_0_50M_0" RelGenDir="$PGENDIR/kf_bd_rst_ps7_0_50M_0">
-      <Config>
-        <Option Name="TopModule" Val="kf_bd_rst_ps7_0_50M_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="kf_bd_axi_dma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/kf_bd_axi_dma_0_0" RelGenDir="$PGENDIR/kf_bd_axi_dma_0_0">
-      <Config>
-        <Option Name="TopModule" Val="kf_bd_axi_dma_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="kf_bd_KF_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/kf_bd_KF_0_0" RelGenDir="$PGENDIR/kf_bd_KF_0_0">
       <Config>
         <Option Name="TopModule" Val="kf_bd_KF_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="kf_bd_smartconnect_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/kf_bd_smartconnect_0_0" RelGenDir="$PGENDIR/kf_bd_smartconnect_0_0">
+      <Config>
+        <Option Name="TopModule" Val="kf_bd_smartconnect_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -217,16 +199,10 @@
   <Runs Version="1" Minor="22">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z007sclg400-1" ConstrsSet="constrs_1" Description="Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2024">
-          <Desc>Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations.</Desc>
-        </StratHandle>
+        <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2024"/>
         <Step Id="synth_design">
           <Option Id="ControlSetOptThreshold">1</Option>
           <Option Id="Directive">1</Option>
-          <Option Id="FlattenHierarchy">0</Option>
-          <Option Id="FsmExtraction">4</Option>
-          <Option Id="GlobalReTiming">0</Option>
-          <Option Id="NoReTiming">1</Option>
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -234,48 +210,13 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="kf_bd_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="kf_bd_processing_system7_0_0" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/kf_bd_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_processing_system7_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_processing_system7_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="kf_bd_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="kf_bd_processing_system7_0_0" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_processing_system7_0_0" Description="Performs general area optimizations including changing the threshold for control set optimizations, forcing ternary adder implementation, applying lower thresholds for use of carry chain in comparators and also area optimized mux optimizations." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/kf_bd_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_processing_system7_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_processing_system7_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="kf_bd_axi_iic_0_0_synth_1" Type="Ft3:Synth" SrcSet="kf_bd_axi_iic_0_0" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_axi_iic_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/kf_bd_axi_iic_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_axi_iic_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_axi_iic_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="kf_bd_rst_ps7_0_50M_0_synth_1" Type="Ft3:Synth" SrcSet="kf_bd_rst_ps7_0_50M_0" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_rst_ps7_0_50M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/kf_bd_rst_ps7_0_50M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_rst_ps7_0_50M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_rst_ps7_0_50M_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="kf_bd_axi_dma_0_0_synth_1" Type="Ft3:Synth" SrcSet="kf_bd_axi_dma_0_0" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_axi_dma_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/kf_bd_axi_dma_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_axi_dma_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_axi_dma_0_0_synth_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
+        <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2024"/>
+        <Step Id="synth_design">
+          <Option Id="ControlSetOptThreshold">1</Option>
+          <Option Id="Directive">1</Option>
+        </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
@@ -294,17 +235,31 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 6 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
+    <Run Id="kf_bd_smartconnect_0_0_synth_1" Type="Ft3:Synth" SrcSet="kf_bd_smartconnect_0_0" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_smartconnect_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/kf_bd_smartconnect_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_smartconnect_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_smartconnect_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-          <Desc>Default settings for Implementation.</Desc>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+          <Desc>Vivado Synthesis Defaults</Desc>
         </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="constrs_1" Description="Uses multiple optimization algorithms to get potentially fewer LUTs." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 6 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Area_Explore" Flow="Vivado Implementation 2024"/>
         <Step Id="init_design"/>
-        <Step Id="opt_design"/>
+        <Step Id="opt_design">
+          <Option Id="Directive">1</Option>
+        </Step>
         <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
+        <Step Id="place_design">
+          <Option Id="Directive">0</Option>
+        </Step>
         <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design">
+        <Step Id="phys_opt_design" EnableStepBool="0">
           <Option Id="Directive">2</Option>
         </Step>
         <Step Id="route_design">
@@ -315,73 +270,13 @@
         </Step>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
     <Run Id="kf_bd_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="kf_bd_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_processing_system7_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_processing_system7_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="kf_bd_axi_iic_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_axi_iic_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="kf_bd_axi_iic_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_axi_iic_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_axi_iic_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="kf_bd_rst_ps7_0_50M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_rst_ps7_0_50M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="kf_bd_rst_ps7_0_50M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_rst_ps7_0_50M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_rst_ps7_0_50M_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="kf_bd_axi_dma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_axi_dma_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="kf_bd_axi_dma_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_axi_dma_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_axi_dma_0_0_impl_1" ParallelReportGen="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -397,6 +292,25 @@
       <RQSFiles/>
     </Run>
     <Run Id="kf_bd_KF_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_KF_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="kf_bd_KF_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_KF_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_KF_0_0_impl_1" ParallelReportGen="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2024"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="kf_bd_smartconnect_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z007sclg400-1" ConstrsSet="kf_bd_smartconnect_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="kf_bd_smartconnect_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/kf_bd_smartconnect_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/kf_bd_smartconnect_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
           <Desc>Default settings for Implementation.</Desc>

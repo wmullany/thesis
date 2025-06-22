@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="kf_bd_processing_system7_0_0_synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1749423378">
+<GenRun Id="kf_bd_processing_system7_0_0_synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1749878102">
   <File Type="PA-TCL" Name="kf_bd_processing_system7_0_0.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="kf_bd_processing_system7_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="kf_bd_processing_system7_0_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="kf_bd_processing_system7_0_0.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="kf_bd_processing_system7_0_0_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="kf_bd_processing_system7_0_0_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="kf_bd_processing_system7_0_0_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="kf_bd_processing_system7_0_0.dcp"/>
@@ -44,9 +44,10 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
-    <Step Id="synth_design"/>
+    <StratHandle Name="Flow_AreaOptimized_high" Flow="Vivado Synthesis 2024"/>
+    <Step Id="synth_design">
+      <Option Id="ControlSetOptThreshold">1</Option>
+      <Option Id="Directive">1</Option>
+    </Step>
   </Strategy>
 </GenRun>

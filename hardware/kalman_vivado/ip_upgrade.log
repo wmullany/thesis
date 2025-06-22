@@ -1,6 +1,708 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Fri Jun 13 23:06:26 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 56) to (Rev. 57)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 20:35:57 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 54) to (Rev. 56)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 20:23:42 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 53) to (Rev. 54)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 19:58:47 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 52) to (Rev. 53)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 19:56:19 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 50) to (Rev. 52)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 19:44:21 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 49) to (Rev. 50)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 19:34:25 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 48) to (Rev. 49)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 19:02:43 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 47) to (Rev. 48)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 17:58:28 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 46) to (Rev. 47)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 17:51:57 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 45) to (Rev. 46)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 17:48:35 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0 (Rev. 45)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 17:30:04 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 44) to (Rev. 45)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 17:12:30 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 43) to (Rev. 44)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 17:09:39 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 42) to (Rev. 43)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 16:18:04 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 41) to (Rev. 42)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 16:15:51 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 40) to (Rev. 41)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 15:54:00 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 37) to (Rev. 40)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 15:38:49 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 36) to (Rev. 37)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 15:34:06 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 35) to (Rev. 36)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 15:32:38 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 34) to (Rev. 35)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 15:28:58 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 33) to (Rev. 34)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 15:14:30 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 31) to (Rev. 33)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 14:26:32 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 30) to (Rev. 31)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:52:43 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 29) to (Rev. 30)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:45:55 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 27) to (Rev. 29)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:37:15 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 26) to (Rev. 27)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:27:13 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 24) to (Rev. 26)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:20:36 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 23) to (Rev. 24)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:12:34 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 22) to (Rev. 23)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Thu Jun 12 13:08:15 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 18) to (Rev. 22)
+
+2. Addressing Information
+-------------------------
+
+Detected addressing differences while upgrading 'kf_bd_KF_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed address space 'M00_AXIS'
+
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Jun 11 13:55:46 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0 (Rev. 18)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Wed Jun 11 13:29:27 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 17) to (Rev. 18)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Jun  9 16:42:47 2025
+| Host         : Laptop45877481 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z007sclg400-1
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'kf_bd_KF_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of kf_bd_KF_0_0 (xilinx.com:user:KF:1.0) from (Rev. 16) to (Rev. 17)
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
 | Date         : Mon Jun  9 10:12:09 2025
 | Host         : Laptop45877481 running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

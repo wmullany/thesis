@@ -67,10 +67,7 @@ module bd_b51c_wni_0 (
   m_sc_send,
   m_sc_req,
   m_sc_info,
-  m_sc_payld,
-  s_axis_arb_tvalid,
-  s_axis_arb_tready,
-  s_axis_arb_tdata
+  m_sc_payld
 );
 
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 aclk CLK" *)
@@ -83,13 +80,13 @@ input wire s_sc_aclk;
 input wire s_sc_aresetn;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC REQ" *)
 (* X_INTERFACE_MODE = "slave" *)
-input wire [2 : 0] s_sc_req;
+input wire [0 : 0] s_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC INFO" *)
-input wire [2 : 0] s_sc_info;
+input wire [0 : 0] s_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC SEND" *)
-input wire [2 : 0] s_sc_send;
+input wire [0 : 0] s_sc_send;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC RECV" *)
-output wire [2 : 0] s_sc_recv;
+output wire [0 : 0] s_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC PAYLD" *)
 input wire [54 : 0] s_sc_payld;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_sc_aclk CLK" *)
@@ -111,14 +108,6 @@ output wire [1 : 0] m_sc_req;
 output wire [1 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC PAYLD" *)
 output wire [54 : 0] m_sc_payld;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_ARB TVALID" *)
-(* X_INTERFACE_MODE = "slave" *)
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXIS_ARB, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 50000000, PHASE 0.0, CLK_DOMAIN kf_bd_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
-input wire s_axis_arb_tvalid;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_ARB TREADY" *)
-output wire s_axis_arb_tready;
-(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 S_AXIS_ARB TDATA" *)
-input wire [15 : 0] s_axis_arb_tdata;
 
   sc_node_v1_0_17_top #(
     .C_FAMILY("zynq"),
@@ -129,17 +118,17 @@ input wire [15 : 0] s_axis_arb_tdata;
     .C_FIFO_OUTPUT_REG(1),
     .C_ENABLE_PIPELINING(8'H01),
     .C_SYNCHRONIZATION_STAGES(3),
-    .C_NUM_SI(3),
+    .C_NUM_SI(1),
     .C_NUM_MI(2),
     .C_CHANNEL(1),
     .C_PAYLD_WIDTH(55),
-    .C_S_NUM_BYTES_ARRAY(96'H000000040000000400000004),
+    .C_S_NUM_BYTES_ARRAY(32'H00000004),
     .C_M_NUM_BYTES_ARRAY(64'H0000000400000004),
-    .C_PRIORITY_ARB_ARRAY(3'B000),
+    .C_PRIORITY_ARB_ARRAY(1'B0),
     .C_USER_BITS_PER_BYTE(0),
     .C_ARBITER_MODE(1),
     .C_SC_ROUTE_WIDTH(4),
-    .C_ID_WIDTH(2),
+    .C_ID_WIDTH(1),
     .C_ADDR_WIDTH(32),
     .C_USER_WIDTH(512),
     .C_MAX_PAYLD_BYTES(4),
@@ -147,7 +136,7 @@ input wire [15 : 0] s_axis_arb_tdata;
     .C_M_PIPELINE(0),
     .C_M_SEND_PIPELINE(0),
     .C_S_LATENCY(0),
-    .C_NUM_OUTSTANDING(16),
+    .C_NUM_OUTSTANDING(8),
     .C_ACLK_RELATIONSHIP(1),
     .C_ACLKEN_CONVERSION(0)
   ) inst (
@@ -170,8 +159,8 @@ input wire [15 : 0] s_axis_arb_tdata;
     .m_axis_arb_tvalid(),
     .m_axis_arb_tready(1'H1),
     .m_axis_arb_tdata(),
-    .s_axis_arb_tvalid(s_axis_arb_tvalid),
-    .s_axis_arb_tready(s_axis_arb_tready),
-    .s_axis_arb_tdata(s_axis_arb_tdata)
+    .s_axis_arb_tvalid(1'H0),
+    .s_axis_arb_tready(),
+    .s_axis_arb_tdata(16'B0)
   );
 endmodule

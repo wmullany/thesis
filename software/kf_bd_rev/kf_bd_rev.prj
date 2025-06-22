@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="kf_bd_rev" location="C:/Users/mulla/Documents/thesis/softwareC/kf_bd_rev" platform="C:/Users/mulla/Documents/thesis/softwareC/kf_bd_double/export/kf_bd_double/kf_bd_double.xpfm" platformUID="xilinx:cora-z7-07s::0.0(custom)" systemProject="kf_bd_rev_system" sysConfig="kf_bd_double" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="d1961b78c905826e27c94d42e5de4ed2">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.607427536">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.594785001" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

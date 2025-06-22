@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Mon Jun  9 10:18:31 2025
+-- Date        : Fri Jun 13 23:11:34 2025
 -- Host        : Laptop45877481 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0/kf_bd_KF_0_0_stub.vhdl
@@ -34,7 +34,7 @@ entity kf_bd_KF_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of kf_bd_KF_0_0 : entity is "kf_bd_KF_0_0,KF,{}";
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of kf_bd_KF_0_0 : entity is "kf_bd_KF_0_0,KF,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KF,x_ipVersion=1.0,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S01_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_START_COUNT=8}";
+  attribute CORE_GENERATION_INFO of kf_bd_KF_0_0 : entity is "kf_bd_KF_0_0,KF,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KF,x_ipVersion=1.0,x_ipCoreRevision=57,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S01_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_START_COUNT=32}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of kf_bd_KF_0_0 : entity is "yes";
 end kf_bd_KF_0_0;

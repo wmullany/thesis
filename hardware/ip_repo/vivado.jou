@@ -3,10 +3,10 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Jun  9 09:07:15 2025
-# Process ID         : 200
+# Start of session at: Thu Jun 12 16:06:24 2025
+# Process ID         : 2144
 # Current directory  : C:/Users/mulla/Documents/thesis/hardware/ip_repo
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent44780 C:\Users\mulla\Documents\thesis\hardware\ip_repo\edit_KF_v1_0.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent13048 C:\Users\mulla\Documents\thesis\hardware\ip_repo\edit_KF_v1_0.xpr
 # Log file           : C:/Users/mulla/Documents/thesis/hardware/ip_repo/vivado.log
 # Journal file       : C:/Users/mulla/Documents/thesis/hardware/ip_repo\vivado.jou
 # Running On         : Laptop45877481
@@ -17,28 +17,171 @@
 # CPU Physical cores : 10
 # CPU Logical cores  : 12
 # Host memory        : 16876 MB
-# Swap memory        : 23259 MB
-# Total Virtual      : 40136 MB
-# Available Virtual  : 6841 MB
+# Swap memory        : 16876 MB
+# Total Virtual      : 33753 MB
+# Available Virtual  : 11907 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/mulla/Documents/thesis/hardware/ip_repo/edit_KF_v1_0.xpr
 update_compile_order -fileset sources_1
 ipx::open_ipxact_file {C:\Users\mulla\Documents\thesis\hardware\ip_repo\KF_1_0\component.xml}
-set_property core_revision 14 [ipx::current_core]
+set_property core_revision 41 [ipx::current_core]
 ipx::create_xgui_files [ipx::current_core]
 ipx::update_checksums [ipx::current_core]
 ipx::check_integrity [ipx::current_core]
 ipx::save_core [ipx::current_core]
 update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
-set_property core_revision 15 [ipx::current_core]
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 42 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 43 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 44 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 45 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 46 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 47 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 48 [ipx::current_core]
 ipx::create_xgui_files [ipx::current_core]
 ipx::update_checksums [ipx::current_core]
 ipx::check_integrity [ipx::current_core]
 ipx::save_core [ipx::current_core]
 update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
 update_compile_order -fileset sources_1
-set_property core_revision 16 [ipx::current_core]
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 49 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 50 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 51 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+set_property core_revision 52 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 53 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+ipx::merge_project_changes files [ipx::current_core]
+ipx::unload_core c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0/component.xml
+ipx::open_ipxact_file {C:\Users\mulla\Documents\thesis\hardware\ip_repo\KF_1_0\component.xml}
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+ipx::merge_project_changes files [ipx::current_core]
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 54 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+synth_design -top KF -part xc7z007sclg400-1 -lint 
+ipx::merge_project_changes files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 55 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0
+set_property core_revision 56 [ipx::current_core]
 ipx::create_xgui_files [ipx::current_core]
 ipx::update_checksums [ipx::current_core]
 ipx::check_integrity [ipx::current_core]

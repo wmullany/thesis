@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Mon Jun  9 10:18:31 2025
+// Date        : Fri Jun 13 23:11:34 2025
 // Host        : Laptop45877481 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0/kf_bd_KF_0_0_stub.v
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "kf_bd_KF_0_0,KF,{}" *) (* CORE_GENERATION_INFO = "kf_bd_KF_0_0,KF,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KF,x_ipVersion=1.0,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S01_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_START_COUNT=8}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "kf_bd_KF_0_0,KF,{}" *) (* CORE_GENERATION_INFO = "kf_bd_KF_0_0,KF,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KF,x_ipVersion=1.0,x_ipCoreRevision=57,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S01_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_START_COUNT=32}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
 (* X_CORE_INFO = "KF,Vivado 2024.2" *) 
 module kf_bd_KF_0_0(m00_axis_aclk, m00_axis_aresetn, 
   m00_axis_tvalid, m00_axis_tdata, m00_axis_tstrb, m00_axis_tlast, m00_axis_tready, 

@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:user:KF:1.0
-// IP Revision: 16
+// IP Revision: 57
 
 `timescale 1ns/1ps
 
@@ -114,7 +114,7 @@ input wire s01_axis_tvalid;
   KF #(
     .C_S01_AXIS_TDATA_WIDTH(32),  // AXI4Stream sink: Data Width
     .C_M00_AXIS_TDATA_WIDTH(32),  // Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-    .C_M00_AXIS_START_COUNT(8)  // Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
+    .C_M00_AXIS_START_COUNT(32)  // Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
   ) inst (
     .m00_axis_aclk(m00_axis_aclk),
     .m00_axis_aresetn(m00_axis_aresetn),

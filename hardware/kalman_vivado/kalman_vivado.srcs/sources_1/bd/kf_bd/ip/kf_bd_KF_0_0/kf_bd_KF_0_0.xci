@@ -4,19 +4,19 @@
     "xci_name": "kf_bd_KF_0_0",
     "cell_name": "KF_0",
     "component_reference": "xilinx.com:user:KF:1.0",
-    "ip_revision": "16",
+    "ip_revision": "57",
     "gen_directory": "../../../../../../kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0",
     "parameters": {
       "component_parameters": {
         "C_S01_AXIS_TDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
         "C_M00_AXIS_TDATA_WIDTH": [ { "value": "32", "resolve_type": "user", "format": "long", "enabled": false, "usage": "all" } ],
-        "C_M00_AXIS_START_COUNT": [ { "value": "8", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "C_M00_AXIS_START_COUNT": [ { "value": "32", "value_src": "user", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "kf_bd_KF_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "C_S01_AXIS_TDATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_M00_AXIS_TDATA_WIDTH": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "C_M00_AXIS_START_COUNT": [ { "value": "8", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "C_M00_AXIS_START_COUNT": [ { "value": "32", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],
@@ -33,7 +33,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "16" } ],
+        "IPREVISION": [ { "value": "57" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -92,7 +92,6 @@
           "vlnv": "xilinx.com:interface:axis:1.0",
           "abstraction_type": "xilinx.com:interface:axis_rtl:1.0",
           "mode": "master",
-          "address_space_ref": "M00_AXIS",
           "parameters": {
             "WIZ_DATA_WIDTH": [ { "value": "32", "value_src": "constant", "value_permission": "bd", "format": "long", "usage": "all" } ],
             "TDATA_NUM_BYTES": [ { "value": "4", "value_src": "auto", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
@@ -176,12 +175,6 @@
           "port_maps": {
             "CLK": [ { "physical_name": "m00_axis_aclk" } ]
           }
-        }
-      },
-      "address_spaces": {
-        "M00_AXIS": {
-          "range": "1",
-          "width": "1"
         }
       }
     }

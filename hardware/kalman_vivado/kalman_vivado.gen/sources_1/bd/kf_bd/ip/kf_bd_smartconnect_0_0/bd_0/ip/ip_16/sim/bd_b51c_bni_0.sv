@@ -88,7 +88,7 @@ input wire [1 : 0] s_sc_send;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC RECV" *)
 output wire [1 : 0] s_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S_SC PAYLD" *)
-input wire [11 : 0] s_sc_payld;
+input wire [6 : 0] s_sc_payld;
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m_sc_aclk CLK" *)
 (* X_INTERFACE_MODE = "slave" *)
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m_sc_aclk, ASSOCIATED_BUSIF M_SC, ASSOCIATED_RESET m_sc_aresetn, ASSOCIATED_CLKEN m_sc_aclken, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN kf_bd_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
@@ -99,15 +99,15 @@ input wire m_sc_aclk;
 input wire m_sc_aresetn;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC RECV" *)
 (* X_INTERFACE_MODE = "master" *)
-input wire [2 : 0] m_sc_recv;
+input wire [0 : 0] m_sc_recv;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC SEND" *)
-output wire [2 : 0] m_sc_send;
+output wire [0 : 0] m_sc_send;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC REQ" *)
-output wire [2 : 0] m_sc_req;
+output wire [0 : 0] m_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC INFO" *)
-output wire [2 : 0] m_sc_info;
+output wire [0 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC PAYLD" *)
-output wire [11 : 0] m_sc_payld;
+output wire [6 : 0] m_sc_payld;
 
   sc_node_v1_0_17_top #(
     .C_FAMILY("zynq"),
@@ -119,16 +119,16 @@ output wire [11 : 0] m_sc_payld;
     .C_ENABLE_PIPELINING(8'H01),
     .C_SYNCHRONIZATION_STAGES(3),
     .C_NUM_SI(2),
-    .C_NUM_MI(3),
+    .C_NUM_MI(1),
     .C_CHANNEL(4),
-    .C_PAYLD_WIDTH(12),
+    .C_PAYLD_WIDTH(7),
     .C_S_NUM_BYTES_ARRAY(64'H0000000400000004),
-    .C_M_NUM_BYTES_ARRAY(96'H000000040000000400000004),
+    .C_M_NUM_BYTES_ARRAY(32'H00000004),
     .C_PRIORITY_ARB_ARRAY(2'B00),
     .C_USER_BITS_PER_BYTE(0),
     .C_ARBITER_MODE(1),
-    .C_SC_ROUTE_WIDTH(5),
-    .C_ID_WIDTH(2),
+    .C_SC_ROUTE_WIDTH(3),
+    .C_ID_WIDTH(1),
     .C_ADDR_WIDTH(32),
     .C_USER_WIDTH(0),
     .C_MAX_PAYLD_BYTES(4),
@@ -136,7 +136,7 @@ output wire [11 : 0] m_sc_payld;
     .C_M_PIPELINE(0),
     .C_M_SEND_PIPELINE(0),
     .C_S_LATENCY(0),
-    .C_NUM_OUTSTANDING(16),
+    .C_NUM_OUTSTANDING(8),
     .C_ACLK_RELATIONSHIP(1),
     .C_ACLKEN_CONVERSION(0)
   ) inst (

@@ -7,19 +7,22 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd || OR
 # IP: bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_processing_system7_0_0 || ORIG_REF_NAME==kf_bd_processing_system7_0_0} -quiet] -quiet
 
-# IP: bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_smartconnect_0_0 || ORIG_REF_NAME==kf_bd_smartconnect_0_0} -quiet] -quiet
-
 # IP: bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_axi_iic_0_0 || ORIG_REF_NAME==kf_bd_axi_iic_0_0} -quiet] -quiet
 
-# IP: bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_rst_ps7_0_50M_0 || ORIG_REF_NAME==kf_bd_rst_ps7_0_50M_0} -quiet] -quiet
-
-# IP: bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_axi_dma_0_0 || ORIG_REF_NAME==kf_bd_axi_dma_0_0} -quiet] -quiet
-
 # IP: bd/kf_bd/ip/kf_bd_KF_0_0/kf_bd_KF_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_KF_0_0 || ORIG_REF_NAME==kf_bd_KF_0_0} -quiet] -quiet
+
+# IP: bd/kf_bd/ip/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_axi_dma_0_1 || ORIG_REF_NAME==kf_bd_axi_dma_0_1} -quiet] -quiet
+
+# IP: bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_smartconnect_0_0 || ORIG_REF_NAME==kf_bd_smartconnect_0_0} -quiet] -quiet
+
+# IP: bd/kf_bd/ip/kf_bd_smartconnect_1_0/kf_bd_smartconnect_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_smartconnect_1_0 || ORIG_REF_NAME==kf_bd_smartconnect_1_0} -quiet] -quiet
+
+# IP: bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==kf_bd_rst_ps7_0_50M_3 || ORIG_REF_NAME==kf_bd_rst_ps7_0_50M_3} -quiet] -quiet
 
 # XDC: c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/kf_bd_ooc.xdc

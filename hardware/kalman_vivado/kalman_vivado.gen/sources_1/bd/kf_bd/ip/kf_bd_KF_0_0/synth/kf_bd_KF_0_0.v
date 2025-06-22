@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:KF:1.0
-// IP Revision: 16
+// IP Revision: 57
 
 (* X_CORE_INFO = "KF,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "kf_bd_KF_0_0,KF,{}" *)
-(* CORE_GENERATION_INFO = "kf_bd_KF_0_0,KF,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KF,x_ipVersion=1.0,x_ipCoreRevision=16,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S01_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_START_COUNT=8}" *)
+(* CORE_GENERATION_INFO = "kf_bd_KF_0_0,KF,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=KF,x_ipVersion=1.0,x_ipCoreRevision=57,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S01_AXIS_TDATA_WIDTH=32,C_M00_AXIS_TDATA_WIDTH=32,C_M00_AXIS_START_COUNT=32}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module kf_bd_KF_0_0 (
   m00_axis_aclk,
@@ -115,7 +115,7 @@ input wire s01_axis_tvalid;
   KF #(
     .C_S01_AXIS_TDATA_WIDTH(32),  // AXI4Stream sink: Data Width
     .C_M00_AXIS_TDATA_WIDTH(32),  // Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-    .C_M00_AXIS_START_COUNT(8)  // Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
+    .C_M00_AXIS_START_COUNT(32)  // Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
   ) inst (
     .m00_axis_aclk(m00_axis_aclk),
     .m00_axis_aresetn(m00_axis_aresetn),

@@ -8,84 +8,93 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Mon Jun  9 10:19:03 2025
+  **** Start of session at: Sat Jun 14 15:17:24 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source kf_bd_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 657.609 ; gain = 228.848
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 657.215 ; gain = 230.117
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/mulla/Documents/thesis/hardware/ip_repo/KF_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-Command: synth_design -top kf_bd_wrapper -part xc7z007sclg400-1 -flatten_hierarchy full -directive AreaOptimized_high -global_retiming off -fsm_extraction gray -control_set_opt_threshold 1
+Command: synth_design -top kf_bd_wrapper -part xc7z007sclg400-1 -directive AreaOptimized_high -control_set_opt_threshold 1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 36536
+INFO: [Synth 8-7075] Helper process launched with PID 20968
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1388.934 ; gain = 467.324
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1393.730 ; gain = 465.227
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'kf_bd_wrapper' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/hdl/kf_bd_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'kf_bd' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:13]
-INFO: [Synth 8-6157] synthesizing module 'kf_bd_KF_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_KF_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'kf_bd_KF_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_KF_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'm00_axis_tstrb' of module 'kf_bd_KF_0_0' is unconnected for instance 'KF_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:210]
-WARNING: [Synth 8-7023] instance 'KF_0' of module 'kf_bd_KF_0_0' has 14 connections declared, but only 13 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:210]
-INFO: [Synth 8-6157] synthesizing module 'kf_bd_axi_dma_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'kf_bd_axi_dma_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_axi_dma_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'kf_bd_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'kf_bd_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'kf_bd_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'kf_bd_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-WARNING: [Synth 8-7071] port 's2mm_introut' of module 'kf_bd_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'kf_bd_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'kf_bd_axi_dma_0_0' has 64 connections declared, but only 58 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:224]
-INFO: [Synth 8-6157] synthesizing module 'kf_bd_axi_iic_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_axi_iic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'kf_bd_axi_iic_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_axi_iic_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'gpo' of module 'kf_bd_axi_iic_0_0' is unconnected for instance 'axi_iic_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:283]
-WARNING: [Synth 8-7023] instance 'axi_iic_0' of module 'kf_bd_axi_iic_0_0' has 27 connections declared, but only 26 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:283]
-INFO: [Synth 8-6157] synthesizing module 'kf_bd_processing_system7_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'kf_bd_processing_system7_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'I2C0_SDA_O' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:312]
-WARNING: [Synth 8-7071] port 'I2C0_SDA_T' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:312]
-WARNING: [Synth 8-7071] port 'I2C0_SCL_O' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:312]
-WARNING: [Synth 8-7071] port 'I2C0_SCL_T' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:312]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'kf_bd_processing_system7_0_0' has 69 connections declared, but only 65 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:312]
-INFO: [Synth 8-6157] synthesizing module 'kf_bd_rst_ps7_0_50M_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_rst_ps7_0_50M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'kf_bd_rst_ps7_0_50M_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_rst_ps7_0_50M_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'kf_bd_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:378]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'kf_bd_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:378]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'kf_bd_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:378]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'kf_bd_rst_ps7_0_50M_0' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:378]
-WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'kf_bd_rst_ps7_0_50M_0' has 10 connections declared, but only 6 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:378]
-INFO: [Synth 8-6157] synthesizing module 'kf_bd_smartconnect_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_smartconnect_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'kf_bd_smartconnect_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-15416-Laptop45877481/realtime/kf_bd_smartconnect_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:385]
-WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:385]
-WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:385]
-WARNING: [Synth 8-7071] port 'M01_AXI_wstrb' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:385]
-WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:385]
-WARNING: [Synth 8-7023] instance 'smartconnect_0' of module 'kf_bd_smartconnect_0_0' has 111 connections declared, but only 106 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:385]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_KF_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_KF_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_KF_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_KF_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm00_axis_tstrb' of module 'kf_bd_KF_0_0' is unconnected for instance 'KF_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:242]
+WARNING: [Synth 8-7023] instance 'KF_0' of module 'kf_bd_KF_0_0' has 14 connections declared, but only 13 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:242]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_axi_dma_0_1' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_axi_dma_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_axi_dma_0_1' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_axi_dma_0_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'kf_bd_axi_dma_0_1' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'kf_bd_axi_dma_0_1' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'kf_bd_axi_dma_0_1' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'kf_bd_axi_dma_0_1' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+WARNING: [Synth 8-7071] port 's2mm_introut' of module 'kf_bd_axi_dma_0_1' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'kf_bd_axi_dma_0_1' is unconnected for instance 'axi_dma_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'kf_bd_axi_dma_0_1' has 64 connections declared, but only 58 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:256]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_axi_iic_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_axi_iic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_axi_iic_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_axi_iic_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'iic2intc_irpt' of module 'kf_bd_axi_iic_0_0' is unconnected for instance 'axi_iic_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:315]
+WARNING: [Synth 8-7071] port 'gpo' of module 'kf_bd_axi_iic_0_0' is unconnected for instance 'axi_iic_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:315]
+WARNING: [Synth 8-7023] instance 'axi_iic_0' of module 'kf_bd_axi_iic_0_0' has 27 connections declared, but only 25 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:315]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_processing_system7_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_processing_system7_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'I2C0_SDA_O' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'I2C0_SDA_T' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'I2C0_SCL_O' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'I2C0_SCL_T' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'kf_bd_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'kf_bd_processing_system7_0_0' has 114 connections declared, but only 104 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:343]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_rst_ps7_0_50M_3' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_rst_ps7_0_50M_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_rst_ps7_0_50M_3' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_rst_ps7_0_50M_3_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'kf_bd_rst_ps7_0_50M_3' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:448]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'kf_bd_rst_ps7_0_50M_3' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:448]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'kf_bd_rst_ps7_0_50M_3' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:448]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'kf_bd_rst_ps7_0_50M_3' is unconnected for instance 'rst_ps7_0_50M' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:448]
+WARNING: [Synth 8-7023] instance 'rst_ps7_0_50M' of module 'kf_bd_rst_ps7_0_50M_3' has 10 connections declared, but only 6 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:448]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_smartconnect_0_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_smartconnect_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_smartconnect_0_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_smartconnect_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:455]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:455]
+WARNING: [Synth 8-7071] port 'M01_AXI_awprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:455]
+WARNING: [Synth 8-7071] port 'M01_AXI_wstrb' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:455]
+WARNING: [Synth 8-7071] port 'M01_AXI_arprot' of module 'kf_bd_smartconnect_0_0' is unconnected for instance 'smartconnect_0' [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:455]
+WARNING: [Synth 8-7023] instance 'smartconnect_0' of module 'kf_bd_smartconnect_0_0' has 78 connections declared, but only 73 given [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:455]
+INFO: [Synth 8-6157] synthesizing module 'kf_bd_smartconnect_1_0' [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_smartconnect_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'kf_bd_smartconnect_1_0' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/.Xil/Vivado-35212-Laptop45877481/realtime/kf_bd_smartconnect_1_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'kf_bd' (0#1) [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/synth/kf_bd.v:13]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
 INFO: [Synth 8-6155] done synthesizing module 'kf_bd_wrapper' (0#1) [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/hdl/kf_bd_wrapper.v:13]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1502.105 ; gain = 580.496
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1506.871 ; gain = 578.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1502.105 ; gain = 580.496
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1506.871 ; gain = 578.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1502.105 ; gain = 580.496
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1506.871 ; gain = 578.367
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1502.105 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1506.871 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -94,35 +103,37 @@ Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0_in_context.xdc] for cell 'kf_bd_i/processing_system7_0'
 Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0_in_context.xdc] for cell 'kf_bd_i/processing_system7_0'
-Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0_in_context.xdc] for cell 'kf_bd_i/smartconnect_0'
-Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0_in_context.xdc] for cell 'kf_bd_i/smartconnect_0'
 Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_in_context.xdc] for cell 'kf_bd_i/axi_iic_0'
 Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_in_context.xdc] for cell 'kf_bd_i/axi_iic_0'
-Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_in_context.xdc] for cell 'kf_bd_i/rst_ps7_0_50M'
-Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_in_context.xdc] for cell 'kf_bd_i/rst_ps7_0_50M'
-Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0_in_context.xdc] for cell 'kf_bd_i/axi_dma_0'
-Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0_in_context.xdc] for cell 'kf_bd_i/axi_dma_0'
 Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0/kf_bd_KF_0_0/kf_bd_KF_0_0_in_context.xdc] for cell 'kf_bd_i/KF_0'
 Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_KF_0_0/kf_bd_KF_0_0/kf_bd_KF_0_0_in_context.xdc] for cell 'kf_bd_i/KF_0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1_in_context.xdc] for cell 'kf_bd_i/axi_dma_0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1_in_context.xdc] for cell 'kf_bd_i/axi_dma_0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0_in_context.xdc] for cell 'kf_bd_i/smartconnect_0'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0/kf_bd_smartconnect_0_0_in_context.xdc] for cell 'kf_bd_i/smartconnect_0'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/kf_bd_smartconnect_1_0/kf_bd_smartconnect_1_0_in_context.xdc] for cell 'kf_bd_i/smartconnect_1'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/kf_bd_smartconnect_1_0/kf_bd_smartconnect_1_0_in_context.xdc] for cell 'kf_bd_i/smartconnect_1'
+Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3_in_context.xdc] for cell 'kf_bd_i/rst_ps7_0_50M'
+Finished Parsing XDC File [c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3_in_context.xdc] for cell 'kf_bd_i/rst_ps7_0_50M'
 Parsing XDC File [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1525.922 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1532.855 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1525.922 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1532.855 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1525.922 ; gain = 604.312
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1532.855 ; gain = 604.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1525.922 ; gain = 604.312
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1532.855 ; gain = 604.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -389,16 +400,17 @@ Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint fi
 Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0_in_context.xdc, line 261).
 Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/processing_system7_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/smartconnect_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/axi_iic_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/rst_ps7_0_50M. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/axi_dma_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/KF_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/axi_dma_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/smartconnect_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/smartconnect_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for kf_bd_i/rst_ps7_0_50M. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1525.922 ; gain = 604.312
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1532.855 ; gain = 604.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1525.922 ; gain = 604.312
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1532.855 ; gain = 604.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -427,28 +439,28 @@ Start Pre Area Optimization
 Start Iterative Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Post Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1525.922 ; gain = 604.312
+Start Post Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1532.855 ; gain = 604.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1525.922 ; gain = 604.312
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 1532.855 ; gain = 604.352
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1680.004 ; gain = 758.395
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 1678.648 ; gain = 750.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1680.152 ; gain = 758.543
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 1678.871 ; gain = 750.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1690.367 ; gain = 768.758
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:45 . Memory (MB): peak = 1689.086 ; gain = 760.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -466,19 +478,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1906.719 ; gain = 985.109
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1906.719 ; gain = 985.109
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1906.719 ; gain = 985.109
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -489,11 +519,12 @@ Report BlackBoxes:
 |      |BlackBox name                |Instances |
 +------+-----------------------------+----------+
 |1     |kf_bd_KF_0_0                 |         1|
-|2     |kf_bd_axi_dma_0_0            |         1|
+|2     |kf_bd_axi_dma_0_1            |         1|
 |3     |kf_bd_axi_iic_0_0            |         1|
 |4     |kf_bd_processing_system7_0_0 |         1|
-|5     |kf_bd_rst_ps7_0_50M_0        |         1|
+|5     |kf_bd_rst_ps7_0_50M_3        |         1|
 |6     |kf_bd_smartconnect_0_0       |         1|
+|7     |kf_bd_smartconnect_1_0       |         1|
 +------+-----------------------------+----------+
 
 Report Cell Usage: 
@@ -506,30 +537,32 @@ Report Cell Usage:
 |4     |kf_bd_processing_system7_0 |     1|
 |5     |kf_bd_rst_ps7_0_50M        |     1|
 |6     |kf_bd_smartconnect_0       |     1|
-|7     |IOBUF                      |     2|
+|7     |kf_bd_smartconnect_1       |     1|
+|8     |IOBUF                      |     2|
 +------+---------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1906.719 ; gain = 985.109
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1906.719 ; gain = 961.293
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1906.719 ; gain = 985.109
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:49 . Memory (MB): peak = 1905.301 ; gain = 950.812
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 1905.301 ; gain = 976.797
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1906.719 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1905.301 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1919.500 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1914.488 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Synth Design complete | Checksum: 60373d37
+Synth Design complete | Checksum: c5ca4114
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+39 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1919.500 ; gain = 1230.305
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1919.500 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:00 . Memory (MB): peak = 1914.488 ; gain = 1219.941
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1914.488 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.runs/synth_1/kf_bd_wrapper.dcp' has been generated.
-INFO: [Common 17-206] Exiting Vivado at Mon Jun  9 10:19:41 2025...
+INFO: [Vivado 12-24828] Executing command : report_utilization -file kf_bd_wrapper_utilization_synth.rpt -pb kf_bd_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jun 14 15:18:40 2025...

@@ -56,13 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/.Xil/Vivado-19944-Laptop45877481/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param bd.open.in_stealth_mode 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param bd.open.in_stealth_mode 2
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z007sclg400-1
 
@@ -85,6 +79,11 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/hdl/kf_bd_wrapper.v
 add_files C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.srcs/sources_1/bd/kf_bd/kf_bd.bd
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_processing_system7_0_0/kf_bd_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_1/kf_bd_axi_dma_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_1/bd_b51c_psr_aclk_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_2/bd_b51c_arinsw_0_ooc.xdc]
@@ -108,35 +107,45 @@ set_property used_in_implementation false [get_files -all c:/Users/mulla/Documen
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_23/bd_b51c_sawn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_24/bd_b51c_swn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_25/bd_b51c_sbn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_29/bd_b51c_s01a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_30/bd_b51c_sarn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_31/bd_b51c_srn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_35/bd_b51c_s02a2s_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_36/bd_b51c_sawn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_37/bd_b51c_swn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_38/bd_b51c_sbn_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_39/bd_b51c_m00s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_40/bd_b51c_m00arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_41/bd_b51c_m00rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_42/bd_b51c_m00awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_43/bd_b51c_m00wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_44/bd_b51c_m00bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_46/bd_b51c_m01s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_47/bd_b51c_m01arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_48/bd_b51c_m01rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_49/bd_b51c_m01awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_50/bd_b51c_m01wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_51/bd_b51c_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_26/bd_b51c_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_27/bd_b51c_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_28/bd_b51c_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_29/bd_b51c_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_30/bd_b51c_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_31/bd_b51c_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_33/bd_b51c_m01s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_34/bd_b51c_m01arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_35/bd_b51c_m01rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_36/bd_b51c_m01awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_37/bd_b51c_m01wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/bd_0/ip/ip_38/bd_b51c_m01bn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_0_0/smartconnect.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_iic_0_0/kf_bd_axi_iic_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_0/kf_bd_rst_ps7_0_50M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_axi_dma_0_0/kf_bd_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_1/bd_754d_psr_aclk_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_1/bd_754d_psr_aclk_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_2/bd_754d_arsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_3/bd_754d_rsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_4/bd_754d_awsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_5/bd_754d_wsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_6/bd_754d_bsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_10/bd_754d_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_11/bd_754d_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_12/bd_754d_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_16/bd_754d_s01a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_17/bd_754d_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_18/bd_754d_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_19/bd_754d_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_20/bd_754d_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_21/bd_754d_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_22/bd_754d_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_23/bd_754d_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_24/bd_754d_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/bd_0/ip/ip_25/bd_754d_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_smartconnect_1_0/smartconnect.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/ip/kf_bd_rst_ps7_0_50M_3/kf_bd_rst_ps7_0_50M_3_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/mulla/Documents/thesis/hardware/kalman_vivado/kalman_vivado.gen/sources_1/bd/kf_bd/kf_bd_ooc.xdc]
 
 OPTRACE "Adding files" END { }
@@ -154,7 +163,7 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top kf_bd_wrapper -part xc7z007sclg400-1 -flatten_hierarchy full -directive AreaOptimized_high -global_retiming off -fsm_extraction gray -control_set_opt_threshold 1
+synth_design -top kf_bd_wrapper -part xc7z007sclg400-1 -directive AreaOptimized_high -control_set_opt_threshold 1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -167,6 +176,7 @@ set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef kf_bd_wrapper.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
+generate_parallel_reports -reports { "report_utilization -file kf_bd_wrapper_utilization_synth.rpt -pb kf_bd_wrapper_utilization_synth.pb"  } 
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

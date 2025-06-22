@@ -56,11 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "kf_bd_processing_system7_0_0_synth_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache C:/Users/mulla/Documents/thesis/hardware/kalman_vivado/.Xil/Vivado-19944-Laptop45877481/incrSyn
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param bd.open.in_stealth_mode 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param bd.open.in_stealth_mode 2
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -100,7 +96,7 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top kf_bd_processing_system7_0_0 -part xc7z007sclg400-1 -incremental_mode off -mode out_of_context
+synth_design -top kf_bd_processing_system7_0_0 -part xc7z007sclg400-1 -directive AreaOptimized_high -control_set_opt_threshold 1 -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

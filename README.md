@@ -1,4 +1,5 @@
-**Supervisor**: Dr. Matt D’Souza 
+## Supervisor 
+Dr. Matt D’Souza 
 
 ## 👨‍🔬 Author
 
@@ -130,5 +131,6 @@ Each module is pipelined and tested with simulation and sandbox C equivalents.
 This project is licensed under the MIT License. Feel free to use, adapt, and share with attribution.
 
 ---
+
 
 

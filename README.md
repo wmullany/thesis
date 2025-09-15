@@ -1,3 +1,4 @@
+# 🚀 FPGA-Based Kalman Filter for Sensor Fusion on Coraz7
 ## Supervisor 
 Dr. Matt D’Souza 
 
@@ -7,10 +8,6 @@ Dr. Matt D’Souza
 Thesis Project for METR4912 – School of ITEE  
 The University of Queensland  
  
-
-
-# 🚀 FPGA-Based Kalman Filter for Sensor Fusion on Coraz7
-
 This project implements a real-time **Kalman Filter** system on the **Coraz7 Zynq-7000 FPGA board**. It fuses measurements from two **ultrasonic sensors** and one **IMU** to estimate position and velocity using a combination of hardware-accelerated matrix operations (in Verilog) and software control logic (in Vitis).
 
 ---
@@ -131,6 +128,7 @@ Each module is pipelined and tested with simulation and sandbox C equivalents.
 This project is licensed under the MIT License. Feel free to use, adapt, and share with attribution.
 
 ---
+
 
 
 

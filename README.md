@@ -98,7 +98,7 @@ All matrix operations required for the Kalman filter (e.g., `A * P * A'`, `P - K
 - `matrix_multiply.v`: Multiplies two matrices
 - `matrix_transpose.v`: Transposes a matrix
 - `kalman_filter.v`: Top-level Kalman FSM (connects all matrix ops)
-- AXI Lite wrappers and control logic
+- AXI stream interface wrappers and control logic `hardware/ip_repo/KF_1_0/hdl`
 
 Each module is pipelined and tested with simulation and sandbox C equivalents.
 
@@ -128,6 +128,7 @@ Each module is pipelined and tested with simulation and sandbox C equivalents.
 This project is licensed under the MIT License. Feel free to use, adapt, and share with attribution.
 
 ---
+
 
 
 

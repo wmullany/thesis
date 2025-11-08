@@ -1,8 +1,8 @@
-# 🚀 FPGA-Based Kalman Filter for Sensor Fusion on Coraz7
+# FPGA-Based Kalman Filter for Sensor Fusion on Coraz7
 ## Supervisor 
 Dr. Matt D’Souza 
 
-## 👨‍🔬 Author
+## Author
 
 **Will Mullany**  
 Thesis Project for METR4912 – School of ITEE  
@@ -12,7 +12,7 @@ This project implements a real-time **Kalman Filter** system on the **Coraz7 Zyn
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 ├── verilog/ # Verilog source files (Kalman filter, matrix operations)
 ├── hardware/ # Vivado project (block design, constraints, .xpr)
 ├── software/ # Vitis C application for interfacing with hardware IPs and sensors
@@ -25,18 +25,18 @@ Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
 
 ---
 
-## 📦 Features
+## Features
 
-- ✅ Real-time Kalman filtering in hardware
-- ✅ Sensor fusion using two ultrasonic sensors and one IMU
-- ✅ Modular Verilog matrix operation cores (subtract, multiply, transpose)
-- ✅ Vivado hardware design with AXI interfaces
-- ✅ Vitis software application for sensor input and control
-- ✅ Sandbox environment for debugging the Kalman filter in pure C
+- Real-time Kalman filtering in hardware
+- Sensor fusion using two ultrasonic sensors and one IMU
+- Modular Verilog matrix operation cores (subtract, multiply, transpose)
+- Vivado hardware design with AXI interfaces
+- Vitis software application for sensor input and control
+- Sandbox environment for debugging the Kalman filter in pure C
 
 ---
 
-## 🔧 Hardware Overview
+## Hardware Overview
 
 - **Board**: Coraz7 Zynq-7000 SoC FPGA
 - **Sensors**:
@@ -48,9 +48,9 @@ Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
 
 ---
 
-## 🛠️ Build & Run Instructions
+## Build & Run Instructions
 
-### 🔨 Vivado (FPGA Bitstream)
+### Vivado (FPGA Bitstream)
 
 1. Open Vivado and run the `build.tcl` or open the `.xpr` manually:
     ```bash
@@ -59,7 +59,7 @@ Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
     ```
 2. Export hardware (including bitstream) to be used in Vitis.
 
-### 💻 Vitis (Software Application)
+### Vitis (Software Application)
 
 1. Open Vitis and import the workspace:
     ```bash
@@ -69,7 +69,7 @@ Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
 2. Build the application and program the FPGA.
 3. The software will initialize sensors, collect data, and communicate with the Kalman IP.
 
-### 🧪 Sandbox (C Kalman Filter Simulation)
+### Sandbox (C Kalman Filter Simulation)
 
 1. Used for debugging/tuning the Kalman logic in isolation:
     ```bash
@@ -80,7 +80,7 @@ Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
 
 ---
 
-## 🧠 Kalman Filter Overview
+## Kalman Filter Overview
 
 The filter fuses position data from ultrasonic sensors and velocity/orientation from the IMU to estimate the state:
 
@@ -92,7 +92,7 @@ All matrix operations required for the Kalman filter (e.g., `A * P * A'`, `P - K
 
 ---
 
-## ⚙️ Verilog Modules (in `verilog/`)
+## Verilog Modules (in `verilog/`)
 
 - `matrix_subtract.v`: Subtracts two matrices
 - `matrix_multiply.v`: Multiplies two matrices
@@ -104,7 +104,7 @@ Each module is pipelined and tested with simulation and sandbox C equivalents.
 
 ---
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 - Hardware tests via Vitis terminal using UART output
 - Software testbench for Kalman logic (sandbox)
@@ -113,21 +113,22 @@ Each module is pipelined and tested with simulation and sandbox C equivalents.
 
 ---
 
-## 📈 Future Work
+## Future Work
 
-- [ ] Add support for SPI IMU (higher bandwidth)
-- [ ] UART-to-PC Python visualizer for live state plots
-- [ ] Extend to 3D position tracking
-- [ ] FPGA-side logging buffer to store recent state history
-- [ ] Integrate a feedback controller (e.g., PID) on FPGA
+-  Add support for SPI IMU (higher bandwidth)
+-  UART-to-PC Python visualizer for live state plots
+-  Extend to 3D position tracking
+-  FPGA-side logging buffer to store recent state history
+-  Integrate a feedback controller (e.g., PID) on FPGA
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. Feel free to use, adapt, and share with attribution.
 
 ---
+
 
 
 

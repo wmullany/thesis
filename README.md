@@ -13,12 +13,12 @@ This project implements a real-time **Kalman Filter** system on the **Coraz7 Zyn
 ---
 
 ## Project Structure
-├── verilog/ # Verilog source files (Kalman filter, matrix operations)
-├── hardware/ # Vivado project (block design, constraints, .xpr)
-├── software/ # Vitis C application for interfacing with hardware IPs and sensors
-├── sandbox/ # Standalone C-based Kalman filter for testing/debugging
-├── README.md # Project documentation
-├── .gitignore # Ignores Vivado/Vitis-generated binaries and logs
+- verilog/ # Verilog source files (Kalman filter, matrix operations)
+- hardware/ # Vivado project (block design, constraints, .xpr)
+- software/ # Vitis C application for interfacing with hardware IPs and sensors
+- sandbox/ # Standalone C-based Kalman filter for testing/debugging
+- README.md # Project documentation
+- .gitignore # Ignores Vivado/Vitis-generated binaries and logs
 
 Custom Verilog AXI interface for kalman filter is in hardware/ip_repo/KF_1_0
 
@@ -128,6 +128,7 @@ Each module is pipelined and tested with simulation and sandbox C equivalents.
 This project is licensed under the MIT License. Feel free to use, adapt, and share with attribution.
 
 ---
+
 
 
 
